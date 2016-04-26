@@ -1,0 +1,66 @@
+<img src="http://icon.dyrs.cc/zxsj/blank.gif" data-src="http://icon.dyrs.cc/zxsj/login_bg.jpg" class="lazy login_bg" />
+<div class="body">
+	<section class="title">
+		<h3>登录</h3>
+		<i class="icon_h5 close_login">&#xe615;</i>
+	</section>
+	<section class="middle">
+		<input type="text" placeholder="输入你的手机号/Email登录" id='punlic_login_name' />
+		<input type="password" placeholder="输入密码" id='punlic_login_pas' />
+		<div>
+			<a href="" id="public_go_login">登录</a>
+			<a href="注册.html">注册</a>
+		</div>
+	</section>
+	<section class="buttom">
+		<div>登录或者注册即同意家居在线<a href="">用户服务协议</a></div>
+		<section>
+			<a href="">
+				<i class="icon_h5">&#xe618;</i>新浪微博登录
+			</a>
+			<a href="">
+				<i class="icon_h5">&#xe613;</i>QQ登录
+			</a>
+			<a href="">
+				<i class="icon_h5">&#xe614;</i>淘宝登录
+			</a>
+		</section>
+	</section>
+</div>
+<script type="text/javascript">
+	$(function() {
+		$('.close_login').click(function() {
+			$('section#login').hide();
+			$('html,body').removeClass('no_scroll');
+			$('html,body').stop().animate({
+				'scrollTop': my.scroll
+			}, 0)
+		});
+		var $public_name = $('#punlic_login_name');
+		var $public_pas = $('#punlic_login_pas');
+		$('#public_go_login').click(function(e) {
+			e.preventDefault();
+			var go_json = {
+				name: $.trim($public_name.val()),
+				pas: $public_pas.val()
+			}
+			if (go_json.name == '') {
+				my.toast('账号不能为空！');
+			} else if (go_json.pas == '') {
+				my.toast('密码不能为空！');
+			} else if (!my.email.test(go_json.name) && !my.tel_test.test(go_json.name)) {
+				my.toast('账号格式不正确!')
+			} else {
+				my.show_loading();
+				if (go_json.name == '18688888888') {
+					store.set('uid', '18688888888');
+					my.close_loading();
+					my.tips('ok','登录成功')
+					$('.close_login').click();
+				}else{
+					alert(18688888888)
+				}
+			}
+		});
+	})
+</script>

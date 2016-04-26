@@ -1,0 +1,65 @@
+@import 'share';
+section.praise {
+    div.btn {
+        margin-top: 15px;
+        text-align: center;
+        button {
+            display: inline-block;
+            padding: 7px 13px;
+            background-color: #ff4049;
+            color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: lighter;
+            &:active {
+                opacity: 0.7;
+            }
+        }
+        button.no{
+            border:1px solid #e3e3e3;
+            background-color: transparent;
+            color: #e3e3e3;
+        }
+        span {
+            margin-top: 10px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            display: block;
+        }
+    }
+    div.peoples {
+        div {
+            overflow: hidden;
+            width: 6.1rem;
+            margin: 0 auto;
+            a {
+                float: left;
+                width: 0.8rem;
+                height: 0.8rem;
+                margin: 0.1rem;
+                img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+    div.data {
+        margin: 13px 0;
+        overflow: hidden;
+        span {
+            float: left;
+            padding-left: 2px;
+            margin-right: 15px;
+            i {
+                margin-right: 2px;
+            }
+        }
+        span.shares{
+            float: right;
+            font-size: 12px;
+        }
+    }
+}

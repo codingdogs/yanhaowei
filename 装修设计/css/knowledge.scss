@@ -1,0 +1,254 @@
+@import 'public';
+@import 'shapes/comment_shape';
+@import 'shapes/comment_pic_btn_shape';
+@import 'shapes/more_list_shape';
+@import 'shapes/form_shape';
+section.knowledge_content {
+    div.title {
+        border-bottom: 1px solid $color_border;
+        height: 40px;
+        background-color: #f8f8f8;
+        font-size: 14px;
+        margin-bottom: $bottom;
+        @extend .box;
+        position: fixed;
+        z-index: 30;
+        top:45px;
+        a {
+            display: block;
+            height: 100%;
+            @include box-flex();
+            text-align: center;
+            line-height: 40px;
+            color: $color_title;
+        }
+        a.on {
+            color: $color_logo;
+            position: relative;
+            &:after {
+                content: '';
+                width: 100%;
+                position: absolute;
+                display: block;
+                background-color: $color_logo;
+                height: 2px;
+                bottom: -1px;
+                left: 0;
+            }
+        }
+    }
+}
+ul.last {
+    li {
+        &:last-of-type {
+            border-bottom: 0;
+        }
+    }
+}
+ul.list_href_shape {
+    li {
+        overflow: hidden;
+        display: block;
+        &:last-of-type {
+            margin: 0;
+        }
+        div {
+            a {
+                display: block;
+                position: relative;
+                padding-left: 10px;
+                color: #666;
+                font-size: 14px;
+                line-height: 1;
+                margin-bottom: $bottom;
+                &:nth-of-type(1) {
+                    margin-top: 5px;
+                }
+                &:before {
+                    content: '';
+                    width: 4px;
+                    height: 4px;
+                    background-color: #666;
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    margin-top: -2px;
+                    display: block;
+                    border-radius: 50%;
+                }
+                span {
+                    display: inline-block;
+                    @extend .ellipsis;
+                    position: relative;
+                    max-width: 100%;
+                    padding-right: 30px;
+                    i {
+                        background-color: $color_logo;
+                        font-size: 12px;
+                        color: #fff;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        padding: 2px;
+                        @include transform(0,-10%,0.7);
+                    }
+                }
+            }
+        }
+    }
+}
+//装修知识详情
+section.fonts_content {
+    color: $color_content;
+    font-size: 12px;
+    div.title {
+        padding: 12px 0;
+        h3 {
+            font-size: 14px;
+            color: $color_title;
+            margin-bottom: 6px;
+        }
+    }
+    div.fonts_contents {
+        p {
+            text-indent: 2em;
+            margin-bottom: 10px;
+        }
+        img {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            height: 3rem;
+            background-color: #ccc;
+        }
+    }
+}
+section.my_comment_list {
+    background-color: #fff;
+    margin: $bottom 0;
+    a {
+        background-color: #e8e8e8;
+        margin-bottom: $bottom;
+        @extend .box;
+        padding: 0 0.25rem;
+        height: 45px;
+        overflow: hidden;
+        font-size: 14px;
+        color: $color_title;
+        img {
+            display: block;
+            width: 45px;
+            height: 45px;
+        }
+        div:nth-of-type(2) {
+            padding-top: 3px;
+            display: block;
+            overflow: hidden;
+            padding-left: 12px;
+            button,
+            i {
+                height: 20px;
+                line-height: 20px;
+                display: block;
+                width: 100%;
+                text-align: right;
+            }
+            button {
+                background-color: transparent;
+                color: $color_content;
+                cursor: pointer;
+            }
+            i {
+                font-size: 12px;
+                color: #fe892a;
+            }
+        }
+        div:nth-of-type(1) {
+            padding-left: 8px;
+            @include box-flex(1.0);
+            padding-top: 3px;
+            em,
+            span {
+                @extend .ellipsis;
+                display: block;
+                height: 20px;
+                line-height: 20px;
+            }
+            span{
+                font-size: 12px;
+                color: $color_content;
+            }
+        }
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+}
+section.plan{
+    a{
+        height: 58px;
+        img{
+            width:53px;
+            height:53px;
+            margin-top:5px;
+        }
+        div:nth-of-type(1) {
+            i{
+                font-size: 12px;
+                @include transform(0,0,0.8);
+                @extend .scale-origin;
+                display: block;
+                color: $color_content;
+                opacity: 0.9;
+                margin-top:-5px;
+            }
+        }
+         div:nth-of-type(2) {
+             i{
+                 margin-top:13px;
+             }
+         }
+    }
+}
+section.need{
+            border-top:1px solid $color_border;
+    a{
+        background-color: #fff;
+        margin-bottom:0;
+        
+        height: 80px;
+        border-bottom:1px solid $color_border;
+        img{
+            width: 75px;
+            height: 75px;
+        }
+        div:nth-of-type(1) {
+            i{
+                font-size: 12px;
+                @include transform();
+                color: $color_content;
+                opacity: 1;
+                margin-top:-2px;
+                font-size: 13px;
+            }
+            span{
+                font-size: 13px;
+                margin-top:10px;
+            }
+            em{
+                margin-top:8px;
+                font-size: 15px;
+            }
+        }
+         div:nth-of-type(2) {
+             button{
+                 margin-top:8px;
+             }
+             i{
+                 margin-top:27px;
+             }
+         }
+    }
+}
+
+
