@@ -49,12 +49,15 @@
 			width: 100%;
 		}
 		
+		div.input input:focus {
+			border-color: #3385ff;
+		}
+		
 		form button {
 			display: block;
-			margin-left: 20px;
-			background-color: #999999;
+			background-color: #3385ff;
 			text-align: center;
-			padding: 10px 20px;
+			padding: 10px 40px;
 			color: #fff;
 		}
 		
@@ -64,31 +67,33 @@
 			border: 1px solid #999999;
 			z-index: 30;
 			width: 100%;
+			margin-top: -1px;
 		}
 		
 		ul.search_list li {
 			padding: 5px 10px;
-			transition: all 0.5s;
+			transition: all 0.3s;
 			font-size: 12px;
 		}
 		
 		ul.search_list li.on {
 			background-color: #ebebeb;
 		}
-		ul.search_list li:hover {
-			background-color: #ebebeb;
-		}
-		.baidu_input{
+		
+		.baidu_input {
 			position: relative;
+		}
+		
+		input::-webkit-search-cancel-button {
+			display: none;
 		}
 	</style>
 
 	<body>
 		<form action="">
 			<div class="input">
-				<input type="text" name="" id="" value="" class='baidu_input' />
+				<input type="search" name="search" autocomplete="off" id="" value="" class='baidu_input' placeholder="试试吧"/>
 			</div>
-
 			<button>搜索</button>
 		</form>
 		<div class="kong"></div>
@@ -96,46 +101,67 @@
 		<script src="../js/jQuery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			$(function() {
-				var now_search_code='';
+				var now_search_code = '';
 				var $script = $('<script>').appendTo('body');
-				$('.baidu_input').keydown(function() {
+				$('.baidu_input').keyup(function(e) {
+					var key_code = e.keyCode;
+					if (key_code == 40 || key_code == 38) {
+						if(!$search_list){
+							return false;
+						}
+						if (key_code == 40) {
+							var $search_list_li = $search_list.find('li.on');
+							if ($search_list_li.length > 0 && $search_list_li.index() != $search_list.find('li').length - 1) {
+								$search_list_li.removeClass('on').next().addClass('on');
+							} else {
+								$search_list.find('li').removeClass('on').first().addClass('on');
+							}
+							now_input_list.val($search_list.find('li.on').html())
+						} else if (key_code == 38) {
+							var $search_list_li = $search_list.find('li.on');
+							if ($search_list_li.length > 0 && $search_list_li.index() != 0) {
+								$search_list_li.removeClass('on').prev().addClass('on');
+							} else {
+								$search_list.find('li').removeClass('on').last().addClass('on');
+							}
+							now_input_list.val($search_list.find('li.on').html())
+						}
+						return false;
+					}
 					var now_value = $(this).val();
-					if (now_value != ''&&now_search_code!=now_value) {
-						now_search_code=now_value;
+					if (now_search_code != now_value) {
+						now_search_code = now_value;
 						now_input_list = $(this);
 						$script.remove();
 						$script = $('<script>').appendTo('body');
 						$script.attr('src', '').attr('src', 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=' + now_value + '&json=1&p=3&cb=reload_list')
 					}
-				}).blur(function(){
-					$(this).next('.search_list').hide();
-				}).focus(function(){
+				}).blur(function() {
+					var tts = setTimeout(function() {
+						now_input_list.next('.search_list').hide();
+					}, 300)
+				}).focus(function() {
 					$(this).next('.search_list').show();
 				});
 			});
-			var now_input_list,$search_list;
+			var now_input_list, $search_list;
+
 			function reload_list(data) {
-				if(now_input_list.next().hasClass('search_list')){
+				console.log(data)
+				if (now_input_list.next().hasClass('search_list')) {
 					now_input_list.next().remove();
 				};
-				if((data.s).length>0){
-					$search_list=$('<ul class="search_list"></ul>').insertAfter(now_input_list);
+				if ((data.s).length > 0) {
+					$search_list = $('<ul class="search_list"></ul>').insertAfter(now_input_list).on('mouseover', 'li', function() {
+						$(this).addClass('on').siblings().removeClass('on');
+					}).on('click', 'li', function() {
+						now_input_list.val($search_list.find('li.on').html())
+					});
 					for (var s = 0; s < (data.s).length; s++) {
 						$search_list.append('<li>' + (data.s)[s] + '</li>');
 					};
 				}
 			};
-			$(window).keydown(function(e){
-				var key_code=e.keyCode;
-				if(key_code==40||key_code==38){
-					
-					var $search_list_lis=$search_list.find('li');
-//					if('')
-				}
-			}).on('click','ul.search_list li',function(){
-				
-			});
-			
 		</script>
 	</body>
 
