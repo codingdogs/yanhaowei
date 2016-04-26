@@ -1,0 +1,78 @@
+@import "public";
+@import 'shapes/comment_pic_btn_shape';
+#content{
+	padding:0.25rem;
+	background-color: #fff;
+	section.title{
+	    color: $color_title2;
+	    font-size: 12px;
+	    border-bottom:1px solid $color_border;
+	    padding-bottom:7px;
+	    line-height: 1.7em;
+		h2{
+			font-size: 15px;
+			color: $color_title;
+			text-align: center;
+			@extend .ellipsis;
+		}
+		div.num{
+		   span{
+		       padding-right: 13px;
+		       i{
+		           padding-right: 5px;
+		       }
+		   } 
+		}
+		div.style{
+		    overflow: hidden;
+		    text-align: center;
+		    margin-top:2px;
+		    margin-bottom:8px;
+		    span{
+		        display: inline-block;
+		        padding:3px;
+		        padding-bottom:0;
+		    }
+		    section{
+		        float: left;
+		        margin-right: 15px;
+		    }
+		}
+	}
+	section.info{
+	    font-size: 12px;
+	    padding-top:10px;
+	    color: $color_content;
+	    p{
+	        text-indent: 2em;
+	        margin-bottom:13px;
+	    }
+	    section.imgs{
+	        img{
+	            display: block;
+	            width: 100%;
+	        }
+	        margin-bottom:13px;
+	        position: relative;
+	        width: 100%;
+	        i{
+	            display: block;
+	            text-align: center;
+	            margin-top:3px;
+	        }
+	        span{
+	            display: block;
+	            position: absolute;
+	            bottom:0;
+	            left:0;
+	            width: 100%;
+	            text-align: center;
+	            background-color: rgba(0,0,0,0.5);
+	            color: #fff;
+	            @extend .ellipsis;
+	            padding:4px 0;
+	            line-height: 1;
+	        }
+	    }
+	}
+}

@@ -1,0 +1,14 @@
+$logo_color: #eb821e;
+$color_title: #333333;
+$color_title2: #8d8d8d;
+$color_content: #929292;
+$color_border: #e9e9e9;
+$color_logo: #ff4049;
+$color_bg: #fafafa;
+$bottom: 13px;
+@mixin transform($tr:0, $tr1:0, $sc:1, $ra:0) {
+    -webkit-transform: translate($tr,$tr1) scale($sc) rotate($ra);
+    -ms-transform: translate($tr,$tr1) scale($sc) rotate($ra);
+    -o-transform: translate($tr,$tr1) scale($sc) rotate($ra);
+    transform: translate($tr,$tr1) scale($sc) rotate($ra);
+}
