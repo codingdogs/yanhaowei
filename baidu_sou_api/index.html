@@ -12,40 +12,131 @@
 		<meta http-equiv="Cache-Control" content="no-siteapp" />
 		<meta name="apple-mobile-web-app-title" content="moban">
 		<link rel="apple-touch-icon-precomposed" href="http://icon.dyrs.cc/zxsj/zhuangxiusheji.png" />
+		<link rel="stylesheet" type="text/css" href="../css/normal.css" />
 		<link rel="shortcut icon" href="http://icon.dyrs.cc/zxsj/zhuangxiusheji.ico" />
-		<title></title>
+		<title>百度搜索</title>
 	</head>
+	<style type="text/css">
+		body {
+			background-color: #ccc;
+		}
+		
+		form {
+			position: relative;
+			font-size: 14px;
+			display: box;
+			display: -webkit-box;
+			display: -moz-box;
+			display: -ms-box;
+			padding: 10px;
+		}
+		
+		form div.input {
+			display: block;
+			-webkit-box-flex: 1.0;
+			box-flex: 1.0;
+			-ms-box-flex: 1.0;
+			-moz-box-flex: 1.0;
+			-o-box-flex: 1.0;
+			position: relative;
+		}
+		
+		div.input input {
+			display: block;
+			padding: 10px;
+			line-height: 1px;
+			border: 1px solid #999;
+			width: 100%;
+		}
+		
+		form button {
+			display: block;
+			margin-left: 20px;
+			background-color: #999999;
+			text-align: center;
+			padding: 10px 20px;
+			color: #fff;
+		}
+		
+		ul.search_list {
+			position: absolute;
+			background-color: #fff;
+			border: 1px solid #999999;
+			z-index: 30;
+			width: 100%;
+		}
+		
+		ul.search_list li {
+			padding: 5px 10px;
+			transition: all 0.5s;
+			font-size: 12px;
+		}
+		
+		ul.search_list li.on {
+			background-color: #ebebeb;
+		}
+		ul.search_list li:hover {
+			background-color: #ebebeb;
+		}
+		.baidu_input{
+			position: relative;
+		}
+	</style>
 
 	<body>
-		<div>
-					<iframe src="http://baidu.com" width="" height=""></iframe>
-		</div>
+		<form action="">
+			<div class="input">
+				<input type="text" name="" id="" value="" class='baidu_input' />
+			</div>
 
-		<style type="text/css">
-		div{
-			width: 200px;
-			height: 300px;
-			overflow: hidden;
-			-webkit-overflow-scrolling: touch;
-			overflow: auto;
-			border:1px solid red; 
-		}
-		html,body{
-			width: 100%;
-			height: 100%;
-		}
-		*{
-			padding:0;
-			margin:0;
-		}
-			iframe{
-				width: 100%;
-				height: 100%;
-				display: block;
-				border:none;
+			<button>搜索</button>
+		</form>
+		<div class="kong"></div>
+		<div class="kong"></div>
+		<script src="../js/jQuery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				var now_search_code='';
+				var $script = $('<script>').appendTo('body');
+				$('.baidu_input').keydown(function() {
+					var now_value = $(this).val();
+					if (now_value != ''&&now_search_code!=now_value) {
+						now_search_code=now_value;
+						now_input_list = $(this);
+						$script.remove();
+						$script = $('<script>').appendTo('body');
+						$script.attr('src', '').attr('src', 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=' + now_value + '&json=1&p=3&cb=reload_list')
+					}
+				}).blur(function(){
+					$(this).next('.search_list').hide();
+				}).focus(function(){
+					$(this).next('.search_list').show();
+				});
+			});
+			var now_input_list,$search_list;
+			function reload_list(data) {
+				if(now_input_list.next().hasClass('search_list')){
+					now_input_list.next().remove();
+				};
+				if((data.s).length>0){
+					$search_list=$('<ul class="search_list"></ul>').insertAfter(now_input_list);
+					for (var s = 0; s < (data.s).length; s++) {
+						$search_list.append('<li>' + (data.s)[s] + '</li>');
+					};
+				}
+			};
+			$(window).keydown(function(e){
+				var key_code=e.keyCode;
+				if(key_code==40||key_code==38){
+					
+					var $search_list_lis=$search_list.find('li');
+//					if('')
+				}
+			}).on('click','ul.search_list li',function(){
 				
-			}
-		</style>
+			});
+			
+		</script>
 	</body>
 
 </html>
