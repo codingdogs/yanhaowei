@@ -44,7 +44,7 @@
 		div.input input {
 			display: block;
 			padding: 10px;
-			line-height: 1px;
+			line-height: 1em;
 			border: 1px solid #999;
 			width: 100%;
 		}
@@ -92,12 +92,10 @@
 	<body>
 		<form action="">
 			<div class="input">
-				<input type="search" name="search" autocomplete="off" id="" value="" class='baidu_input' placeholder="试试吧"/>
+				<input type="search" name="search" autocomplete="off" id="" value="" class='baidu_input' placeholder="试试吧" />
 			</div>
 			<button>搜索</button>
 		</form>
-		<div class="kong"></div>
-		<div class="kong"></div>
 		<script src="../js/jQuery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			$(function() {
@@ -105,8 +103,10 @@
 				var $script = $('<script>').appendTo('body');
 				$('.baidu_input').keyup(function(e) {
 					var key_code = e.keyCode;
+					var now_value = $(this).val();
+					now_input_list = $(this);
 					if (key_code == 40 || key_code == 38) {
-						if(!$search_list){
+						if (!$search_list) {
 							return false;
 						}
 						if (key_code == 40) {
@@ -128,14 +128,17 @@
 						}
 						return false;
 					}
-					var now_value = $(this).val();
-					if (now_search_code != now_value) {
+					//为空的时候清除下拉列表
+					if (now_value == '') {
+						now_input_list.next('.search_list').remove();
+						return false;
+					}
+					if (now_search_code != now_value && now_value != '' && now_value != ' ') {
 						now_search_code = now_value;
-						now_input_list = $(this);
 						$script.remove();
 						$script = $('<script>').appendTo('body');
 						$script.attr('src', '').attr('src', 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=' + now_value + '&json=1&p=3&cb=reload_list')
-					}
+					};
 				}).blur(function() {
 					var tts = setTimeout(function() {
 						now_input_list.next('.search_list').hide();
@@ -147,7 +150,6 @@
 			var now_input_list, $search_list;
 
 			function reload_list(data) {
-				console.log(data)
 				if (now_input_list.next().hasClass('search_list')) {
 					now_input_list.next().remove();
 				};
