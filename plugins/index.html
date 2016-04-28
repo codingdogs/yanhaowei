@@ -12,45 +12,62 @@
 		<meta http-equiv="Cache-Control" content="no-siteapp" />
 		<meta name="apple-mobile-web-app-title" content="codewa">
 		<script src="../js/change_view.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			change.action(750, 1);
+		</script>
 		<link rel="stylesheet" type="text/css" href="../css/normal.css" />
-		<link rel="stylesheet" type="text/css" href="../bootstrap-3.3.5-dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="plugins.css" />
 		<link rel="apple-touch-icon-precomposed" href="http://7xkwkh.com1.z0.glb.clouddn.com/dog.png" />
 		<link rel="shortcut icon" href="http://7xkwkh.com1.z0.glb.clouddn.com/dog.ico" />
 		<title>插件</title>
 	</head>
-	<style type="text/css">
-		body {
-			background-color: #fff;
-		}
-		
-		ul.list {
-			background-color: #fff;
-			color: #999;
-			font-size: 16px;
-		}
-		
-		ul.list a {
-			color: #999;
-			display: block;
-			padding: 5px 10px;
-			transition: all 0.3s;
-		}
-		
-		ul.list li a i {
-			display: inline-block;
-			margin-right: 3px;
-		}
-	</style>
 
 	<body>
-		<ul class="container">
-			<div class="row">
-				<li class="col-lg-1"></li>
-			</div>
-		</ul>
+		<div id="y_content">
+			<ul class="inner_content">
+
+			</ul>
+		</div>
+		<script type="text/html" id='shape'>
+			{{each content as value i}}
+			<li>
+				<a href="{{value.href}}">
+					<div class="img_body lazy">
+						<img src='http://7xkwkh.com1.z0.glb.clouddn.com/blank.gif' data-ysrc="{{value.src}}" class="auto" />
+					</div>
+					<div class="font_content">
+						<h3 class="ellipsis"><i class="icon_h5 {{value.type}}"></i>{{value.title}}</h3>
+						<p>{{value.content}}</p>
+					</div>
+				</a>
+			</li>
+			{{/each}}
+		</script>
 		<script src="../js/jQuery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../bootstrap-3.3.5-dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/m_layz_load.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/fastclick.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/template.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			window.addEventListener('load', function() {
+				FastClick.attach(document.body);
+			}, false);
+			var data={
+				content:[{
+					href:'http://echarts.baidu.com/',
+					src:'http://7xkwkh.com1.z0.glb.clouddn.com/echarts.png',
+					title:'图表插件',
+					content:'Echarts 3.0的这一切仅仅是一个新的开始,在探索和完善的道路上我们从未停止脚步',
+					type:'chart'
+				},{
+					href:'',
+					src:'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png',
+					title:'',
+					content:'',
+					type:'chart'
+				}]
+			};
+			$('ul.inner_content').prepend(template('shape',data))
+		</script>
 	</body>
 
 </html>

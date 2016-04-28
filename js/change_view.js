@@ -17,13 +17,22 @@ var change = {
 		}
 		return flag;
 	},
+	pc_type:0,
 	body: document.getElementsByTagName('html')[0],
 	action_flag: true,
-	action: function(num) {
+	action: function(num, $1) {
 		change.design_width = num;
+		if($1){
+			change.pc_type=$1;
+		}
 		if (this.IsPC()) {
 			this.view_width = document.documentElement.clientWidth > num ? num : document.documentElement.clientWidth;
-			this.body.className = 'pc';
+			if (this.pc_type || this.pc_type == 1) {
+				this.body.className =' pc_phone';
+			} else {
+				this.body.className =' pc';
+			}
+
 		} else {
 			this.view_width = document.documentElement.clientWidth < 320 ? num / 2 : document.documentElement.clientWidth;
 		}

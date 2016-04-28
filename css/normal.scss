@@ -121,7 +121,6 @@ body {
     font-size: 0.2rem;
     min-height: 100%;
     position: relative;
-    padding-top: 45px;
 }
 html,
 body {
@@ -140,30 +139,39 @@ html {
     height: 100%;
 }
 body {
-    background-color: #fafafa;
+    background-color: #f8f8f8;
     min-width: 320px;
     overflow-x: hidden;
     font-size: 16px;
-    padding-bottom: 56px;
 }
 html.pc body {
-    background-color: #fafafa;
+    background-color: #f8f8f8;
     margin: 0 auto;
     max-width: 750px;
 }
 html.pc {
     background-color: #ccc;
 }
+html.pc_phone body {
+    margin: 0 auto;
+    max-width: auto;
+    width: 100%;
+}
+html.pc_phone {
+    background-color: #f8f8f8;
+}
 body.hui {
     background-color: #f1f1f1!important;
 }
-img.lazy {
-    opacity: 0;
-    /*transition: opacity 0.5s linear;
-	-webkit-transition: opacity 0.5s linear;*/
+.lazy {
+    background: url('http://7xkwkh.com1.z0.glb.clouddn.com/code.png') no-repeat center center;
+    background-size:10% auto;
 }
 img.go_opacity {
-    opacity: 1 !important;
+    animation: fadeIn 0.5s forwards alternate;
+    -webkit-animation: fadeIn 0.5s forwards alternate;
+    -ms-animation: fadeIn 0.5s forwards alternate;
+    -moz-animation: fadeIn 0.5s forwards alternate;
 }
 @font-face {
    font-family: 'iconfont';
@@ -1000,6 +1008,11 @@ section#warn {
     }
 }
 @-webkit-keyframes fadeIn{0%{opacity:0}100%{opacity:1}}@keyframes fadeIn{0%{opacity:0}100%{opacity:1}}
+@-moz-keyframes fadeIn{0%{opacity:0}100%{opacity:1}}
+@-ms-keyframes fadeIn{0%{opacity:0}100%{opacity:1}}
+.chart:before{
+    content: '\e600';
+}
 //login=====e
 //
 //
