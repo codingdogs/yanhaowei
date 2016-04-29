@@ -12,15 +12,18 @@ ul.inner_content{
         color: #333;
         margin:10px;
         width: 300px;
-        border:1px solid $color_border;
         background-color: #fff;
-        @include box-shadow();
+        z-index: 1;
+        position:relative;
+        border:1px solid $color_border;
         border-radius: 6px;
-        overflow: hidden;
-       -webkit-transform: translateZ(0);
+       display: block;
        &:hover,&:active{
             img{
                 @include transform(scale(1.3));
+            }
+            &:before,&:after{
+                opacity: 0;
             }
         }
         div.img_body{
@@ -41,6 +44,12 @@ ul.inner_content{
             display: block;
             color: #333;
             text-align: left;
+            position: relative;
+            z-index: 1;
+             border-radius: 6px;
+             overflow: hidden;
+                    -webkit-transform: translateZ(0);
+            background-color: #fff;
             div.font_content{
                 width: 100%;
                 padding:5px;
@@ -55,10 +64,9 @@ ul.inner_content{
                     }
                 }
                 p{
-                    padding:0 ;
                     @include line_over(2);
-                    height: 45px;
-                    line-height: 1.3em;
+                    line-height: 1.5em;
+                    height: 40px;
                 }
             }
         }

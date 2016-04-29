@@ -115,11 +115,11 @@ img{
         -o-user-select: none;
 }
 .box{
+      display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
      display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
   display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
   display: -ms-flexbox;      /* TWEENER - IE 10 */
   display: -webkit-flex;     /* NEW - Chrome */
-  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
 img[data-src]{
   transition: opacity 0.5s linear;
@@ -132,10 +132,10 @@ img.go_opacity {
   opacity: 1 !important; }
  @mixin line_over($num:2){
      @extend .box;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      word-break: break-all;
-      -webkit-box-orient: vertical;
+     overflow : hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-box-orient: vertical;
       -webkit-line-clamp: $num;
  }
  .ellipsis {
