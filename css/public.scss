@@ -42,6 +42,13 @@ $bottom:13px;
      -moz-transition: $attribute $time;
      -o-transition: $attribute $time;
 }
+@mixin animation($a){
+    -o-animation: $a;
+    -webkit-animation: $a;
+    -moz-animation: $a;
+    -ms-animation: $a;
+    animation: $a;
+}
 @mixin box-shadow($obj:0px 3px 8px rgba(0, 0, 0, 0.3)){
 -moz-box-shadow:$obj;/*firefox*/ 
 -webkit-box-shadow:$obj;/*webkit*/ 
