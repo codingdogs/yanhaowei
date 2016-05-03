@@ -6,6 +6,11 @@ $color_border:#e9e9e9;
 $color_logo:#ff4049;
 $color_bg:#fafafa;
 $bottom:13px;
+$colors1:#C40F3A;
+$colors2:#00A77B;
+$colors3:#A3248F;
+$colors4:#FFCA08;
+$colors5:#466F83;
 @mixin transform($s:none){
     -webkit-transform: $s;
     -ms-transform: $s;

@@ -5,7 +5,12 @@ $(function() {
 	});
 	var $data_imgs = $('img[data-ysrc]');
 	//$data_imgs.
-	$(window).scroll(window.m_lazy);
+	$(window).scroll(function(){
+		window.m_lazy();
+	});
+	$(window).resize(function(){
+		window.m_lazy();
+	});
 	window.m_lazy = function() {
 		$data_imgs = $('img[data-ysrc]');
 		var $scrollTop = $(window).scrollTop();

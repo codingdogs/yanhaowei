@@ -24,20 +24,32 @@
 
 	<body>
 		<div id="y_content" class="auto_width">
-			<ul class="inner_content">
-
+			<ul class="inner_content shape1">
+				<h2>插件(plugins)</h3>
+			</ul>
+			<ul class="inner_content shape2">
+				<h2>网站(web)</h3>
 			</ul>
 		</div>
 		<script type="text/html" id='shape'>
 			{{each content as value i}}
 			<li class="effect">
-				<a href="{{value.href}}" class="on">
+				<a href="{{value.href}}" target="_blank">
 					<div class="img_body lazy">
+						{{if value.src}}
 						<img src='http://7xkwkh.com1.z0.glb.clouddn.com/blank.gif' data-ysrc="{{value.src}}" class="auto" />
+						{{else}}
+						<em><span class="center">{{value.img_font}}</span></em>
+						{{/if}}
+						<i class="icon_h5 {{value.use}}"></i>
 					</div>
 					<div class="font_content">
 						<h3 class="ellipsis"><i class="icon_h5 {{value.type}}"></i>{{value.title}}</h3>
 						<p>{{value.content}}</p>
+						<div class="bottom">
+							<img src='http://7xkwkh.com1.z0.glb.clouddn.com/blank.gif' data-ysrc="{{value.header_src}}" alt="" />
+							<span>{{value.date}}</span>
+						</div>
 					</div>
 				</a>
 			</li>
@@ -51,58 +63,186 @@
 			window.addEventListener('load', function() {
 				FastClick.attach(document.body);
 			}, false);
-			var data={
-				content:[{
-					href:'http://echarts.baidu.com/',
-					src:'http://7xkwkh.com1.z0.glb.clouddn.com/echarts.png',
-					title:'图表插件',
-					content:'Echarts 3.0的这一切仅仅是一个新的开始,在探索和完善的道路上我们从未停止脚步Echarts 3.0的这一切仅仅是一个新的开始,在探索和完善的道路上我们从未停止脚步的',
-					type:'chart'
-				},{
-					href:'',
-					src:'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png',
-					title:'',
-					content:'',
-					type:'chart'
-				},{
-					href:'',
-					src:'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png',
-					title:'',
-					content:'',
-					type:'chart'
-				},{
-					href:'',
-					src:'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png',
-					title:'',
-					content:'',
-					type:'chart'
-				},{
-					href:'',
-					src:'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png',
-					title:'',
-					content:'',
-					type:'chart'
-				},{
-					href:'',
-					src:'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png',
-					title:'',
-					content:'',
-					type:'chart'
-				},{
-					href:'',
-					src:'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png',
-					title:'',
-					content:'',
-					type:'chart'
-				},{
-					href:'',
-					src:'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png',
-					title:'',
-					content:'',
-					type:'chart'
+			var data = {
+				content: [{
+					href: 'http://echarts.baidu.com/',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/echarts.png',
+					title: '图表插件',
+					content: 'Echarts 3.0的这一切仅仅是一个新的开始,在探索和完善的道路上我们从未停止脚步Echarts 3.0的这一切仅仅是一个新的开始,在探索和完善的道路上我们从未停止脚步的',
+					type: 'chart',
+					date: '2016-05-03',
+					use: 'icon-yishiyong',
+					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+				}, {
+					href: 'http://maroslaw.github.io/rainyday.js/',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/rain.jpg',
+					title: 'rainyday.js',
+					content: 'rainyday是一款基于 html5 canvas 的模拟下雨时雨滴打在玻璃窗上效果的js插件。该雨滴效果插件的特点是使用简单，易于集成。',
+					type: 'icon-my-yu',
+					date: '2016-05-03',
+					use: 'icon-yishiyong',
+					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+				}, {
+					href: 'https://github.com/florian/cookie.js',
+					src: '',
+					img_font:'cookie',
+					title: 'cookie.js',
+					content: '如果你操作过cookie的接口，那么你一定会感觉这东西的规范真的是太复杂了，根本记不住啊，其实你是对的，因为cookie的接口设计的是有问题的，也就是说设计的太底层了，根本不友好，那么来试试这个js库吧。',
+					type: 'icon-cookie',
+					date: '2016-05-03',
+					use: '',
+					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+				}, {
+					href: 'https://github.com/marcuswestin/store.js',
+					src: '',
+					img_font:'localStorage',
+					title: 'store.js',
+					content: '再来说说浏览器的localStore吧，这东西太赞了，可惜尼玛每个浏览器都实现的各不相同，我也是醉了，如果你也有同样的烦恼，不如来试试这个迷你库，它有更简单的api，最重要的是他解决了跨浏览器问题，甚至解决了低版本浏览器(ie6)不支持localStore的问题。',
+					type: 'icon-cookie',
+					date: '2016-05-03',
+					use: 'icon-shiyongzhong',
+					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+				}, {
+					href: 'http://fex-team.github.io/webuploader/',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/plugins1.png',
+					title: 'Web Uploader',
+					content: 'WebUploader是由Baidu WebFE(FEX)团队开发的一个简单的以HTML5为主，FLASH为辅的现代文件上传组件。在现代的浏览器里面能充分发挥HTML5的优势，同时又不摒弃主流IE浏览器，沿用原来的FLASH运行时，兼容IE6+，iOS 6+, android 4+。两套运行时，同样的调用方式，可供用户任意选用。',
+					type: 'chart',
+					date: '2016-05-03',
+					use: '',
+					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+				}, {
+					href: 'https://github.com/aui/artTemplate/',
+					src: '',
+					img_font:'artTemplate',
+					title: 'artTemplate',
+					content: '新一代 javascript 模板引擎',
+					type: 'chart',
+					date: '2016-05-03',
+					use: 'icon-yishiyong',
+					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+				}, {
+					href: 'http://lab.ejci.net/favico.js/',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/plugins2.png',
+					title: 'favico.js',
+					content: '在favico上添加数字书不是很nice，点击下面的官网查看效果，这肯定要逼死强迫症了。',
+					type: 'chart',
+					date: '2016-05-03',
+					use: '',
+					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+				}, {
+					href: 'http://overtrue.me/share.js/',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/plugins3.png',
+					title: 'share.js',
+					content: '如果你受够了分享组件的烦恼，那么来试试这个对移动端有好的分享组件吧，界面优美，看起来很赞。',
+					type: 'chart',
+					date: '2016-05-03',
+					use: '',
+					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+				}, {
+					href: 'http://mathjs.org/',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/plugins4.png',
+					title: 'math.js',
+					content: 'js自带的数学运算不能满足你的需求了，那试试这个，扩展了很多数学运算。',
+					type: 'chart',
+					date: '2016-05-03',
+					use: '',
+					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+				}, {
+					href: 'https://github.com/jaredreich/notie',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/plugins.gif',
+					title: 'notie.js',
+					content: '还在使用弹窗通知用户，太low了，快来试试这款非阻塞式，小清新的通知插件吧，对移动端有好，界面好到爆炸啊。',
+					type: 'chart',
+					date: '2016-05-03',
+					use: '',
+					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+				}, {
+					href: 'http://visionmedia.github.io/move.js/',
+					src: '',
+					img_font:'move.js',
+					title: 'move.js',
+					content: '如果你操作过css3的属性，一定会觉得非常痛苦的，那不如来试试合格，css3动画瞬间变得简单了。',
+					type: 'chart',
+					date: '2016-05-03',
+					use: '',
+					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+				}, {
+					href: 'http://www.swiper.com.cn/',
+					src: '',
+					img_font:'swiper.js',
+					title: 'swiper.js',
+					content: '开源、免费、强大的移动端触摸滑动插件',
+					type: 'chart',
+					date: '2016-05-03',
+					use: '',
+					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+				}, {
+					href: 'http://momentjs.com/',
+					src: '',
+					img_font:'Moment.js ',
+					title: 'Moment.js',
+					content: '使用moment.js轻松管理日期和时间',
+					type: 'chart',
+					date: '2016-05-03',
+					use: '',
+					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
 				}]
 			};
-			$('ul.inner_content').prepend(template('shape',data))
+			var data2={
+				content:[{
+					href: 'http://jquery.cuishifeng.cn/',
+					src: '',
+					title: 'jQuery API 1.12.2 速查表',
+					img_font:'jQuery API',
+					content: 'jQuery API 1.12.2 速查表  --作者：Shifone',
+					type: 'chart',
+					date: '2016-05-03',
+					use: 'icon-yishiyong',
+					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+				},{
+					href: 'http://www.jq22.com/',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/web2.png',
+					title: 'jQuery插件库',
+					content: 'Look For Less,Do More',
+					type: 'chart',
+					date: '2016-05-03',
+					use: 'icon-yishiyong',
+					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+				},{
+					href: 'http://div.io/topic/1540',
+					src: '',
+					title: 'jQuery小插件',
+					img_font:'javascript迷你库',
+					content: '不可错过的javascript迷你库',
+					type: 'chart',
+					date: '2016-05-03',
+					use: 'icon-yishiyong',
+					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+				},{
+					href: 'http://div.io/digg',
+					src: '',
+					title: 'DIV.IO',
+					img_font:'发现',
+					content: 'javascript库',
+					type: 'chart',
+					date: '2016-05-03',
+					use: 'icon-yishiyong',
+					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+				},{
+					href: 'http://iconfont.cn/',
+					src: '',
+					title: 'iconfont',
+					img_font:'iconfont',
+					content: 'Iconfont.cn是由阿里巴巴UX部门推出的矢量图标管理网站，也是国内首家推广Webfont形式图标的平台。',
+					type: 'chart',
+					date: '2016-05-03',
+					use: 'icon-yishiyong',
+					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+				}]
+			}
+			$('ul.shape1').append(template('shape', data));
+			$('ul.shape2').append(template('shape', data2));
 		</script>
 	</body>
 
