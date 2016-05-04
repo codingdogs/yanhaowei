@@ -1,4 +1,10 @@
 @import '../css/public';
+body{
+    padding-bottom:50px;
+}
+a, img {
+    -webkit-touch-callout: none; /* 禁止长按链接与图片弹出菜单 */
+}
 ul.inner_content {
     display: block;
     text-align: center;
