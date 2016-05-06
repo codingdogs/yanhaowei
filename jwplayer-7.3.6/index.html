@@ -30,7 +30,44 @@
 		jwplayer.key="tjyazoWHEM+MlEjIwb6xiRB3SzADh0pi081lgQ==";
 			jwplayer("myDiv").setup({
 				"file": "http://7xkwkh.com1.z0.glb.clouddn.com/04-08-%E5%AE%9A%E4%BD%8D%20-%20geolocationError%20%E3%80%8A%20PhoneGap%20%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80%20%E3%80%8B%20-%20%E5%AE%81%E7%9A%93%E7%BD%91.mp4",
-				"image": "http://7xkwkh.com1.z0.glb.clouddn.com/bg.jpg"
+				"image": "http://7xkwkh.com1.z0.glb.clouddn.com/bg.jpg",
+				'width':'100%',
+				'aspectratio':"16:9",//比例参数
+				'autostart':false,
+				'mute':false,//静音
+				'repeat':true,//循环
+				'abouttext':'yanhaowei',//右击文字
+				'aboutlink':'http://baidu.com',//右击文字链接
+				/*logo:{
+					file:'http://7xkwkh.com1.z0.glb.clouddn.com/code.png',
+					link:'http://baidu.com',
+					margin:20,
+					position:"top-right",
+					width:20,//不起作用
+					height:20//不起作用
+				},*/
+				playlist:[{
+					image:'http://7xkwkh.com1.z0.glb.clouddn.com/plugins12.png',
+					"file": "http://7xkwkh.com1.z0.glb.clouddn.com/04-08-%E5%AE%9A%E4%BD%8D%20-%20geolocationError%20%E3%80%8A%20PhoneGap%20%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80%20%E3%80%8B%20-%20%E5%AE%81%E7%9A%93%E7%BD%91.mp4",
+					title:'test1',
+					description:'miaoshu',
+					sources:[{
+						"file": "http://7xkwkh.com1.z0.glb.clouddn.com/04-08-%E5%AE%9A%E4%BD%8D%20-%20geolocationError%20%E3%80%8A%20PhoneGap%20%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80%20%E3%80%8B%20-%20%E5%AE%81%E7%9A%93%E7%BD%91.mp4",
+						label:'720p',
+						"default":''
+					}]
+				},{
+					image:'http://7xkwkh.com1.z0.glb.clouddn.com/plugins13.png',
+					"file": "http://7xkwkh.com1.z0.glb.clouddn.com/04-08-%E5%AE%9A%E4%BD%8D%20-%20geolocationError%20%E3%80%8A%20PhoneGap%20%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80%20%E3%80%8B%20-%20%E5%AE%81%E7%9A%93%E7%BD%91.mp4",
+					title:'test2',
+					description:'miaoshu'
+				}],
+				displaytitle:true,//是否显示标题
+				displaydescription:true,//是否显示标题
+				listbar:{
+					position:'right',
+					size:200
+				}
 			});
 		</script>
 	</body>

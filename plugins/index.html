@@ -35,7 +35,7 @@
 						{{if value.src}}
 						<img src='http://7xkwkh.com1.z0.glb.clouddn.com/blank.gif' data-ysrc="{{value.src}}" class="auto" /> {{else}}
 						<em><span class="center">{{value.img_font}}</span></em> {{/if}}
-						<i class="icon_h5 {{value.use}}"></i>
+						<i class="icon_h5 {{value.use}}{}"></i>
 					</div>
 					<div class="font_content">
 						<h3 class="ellipsis"><i class="icon_h5 {{value.type}}"></i>{{value.title}}</h3>
@@ -57,6 +57,9 @@
 			window.addEventListener('load', function() {
 				FastClick.attach(document.body);
 			}, false);
+			var user={
+				mine:'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+			}
 			var data = {
 				title: '插件(plugins)',
 				content: [{
@@ -67,7 +70,7 @@
 					type: 'chart',
 					date: '2016-05-03',
 					use: 'icon-yishiyong',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				}, {
 					href: 'http://maroslaw.github.io/rainyday.js/',
 					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/rain.jpg',
@@ -76,7 +79,7 @@
 					type: 'icon-my-yu',
 					date: '2016-05-03',
 					use: 'icon-yishiyong',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				}, {
 					href: 'https://github.com/florian/cookie.js',
 					src: '',
@@ -86,7 +89,7 @@
 					type: 'icon-cookie',
 					date: '2016-05-03',
 					use: '',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				}, {
 					href: 'https://github.com/marcuswestin/store.js',
 					src: '',
@@ -96,7 +99,7 @@
 					type: 'icon-cookie',
 					date: '2016-05-03',
 					use: 'icon-shiyongzhong',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				}, {
 					href: 'http://fex-team.github.io/webuploader/',
 					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/plugins1-1.png',
@@ -105,7 +108,7 @@
 					type: 'icon-iconfontmokuai',
 					date: '2016-05-03',
 					use: '',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				}, {
 					href: 'https://github.com/aui/artTemplate/',
 					src: '',
@@ -115,7 +118,7 @@
 					type: 'icon-iconfontmokuai',
 					date: '2016-05-03',
 					use: 'icon-yishiyong',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				}, {
 					href: 'http://lab.ejci.net/favico.js/',
 					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/plugins2.png',
@@ -124,7 +127,7 @@
 					type: 'icon-iconfontmokuai',
 					date: '2016-05-03',
 					use: '',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				}, {
 					href: 'http://overtrue.me/share.js/',
 					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/plugins3.png',
@@ -133,7 +136,7 @@
 					type: 'icon-iconfontmokuai',
 					date: '2016-05-03',
 					use: '',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				}, {
 					href: 'http://mathjs.org/',
 					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/plugins4.png',
@@ -142,7 +145,7 @@
 					type: 'icon-iconfontmokuai',
 					date: '2016-05-03',
 					use: '',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				}, {
 					href: 'https://github.com/jaredreich/notie',
 					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/plugins.gif',
@@ -151,7 +154,7 @@
 					type: 'icon-iconfontmokuai',
 					date: '2016-05-03',
 					use: '',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				}, {
 					href: 'http://visionmedia.github.io/move.js/',
 					src: '',
@@ -161,7 +164,7 @@
 					type: 'icon-iconfontmokuai',
 					date: '2016-05-03',
 					use: '',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				}, {
 					href: 'http://www.swiper.com.cn/',
 					src: '',
@@ -171,7 +174,7 @@
 					type: 'icon-iconfontmokuai',
 					date: '2016-05-03',
 					use: '',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				}, {
 					href: 'http://momentjs.com/',
 					src: '',
@@ -181,7 +184,7 @@
 					type: 'icon-iconfontmokuai',
 					date: '2016-05-03',
 					use: '',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				}, {
 					href: 'https://github.com/loktar00/JQuery-Snowfall',
 					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/plugins8.png',
@@ -191,7 +194,7 @@
 					date: '2016-05-03',
 					title: 'animate.css', 
 					use: 'icon-yishiyong',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				}, {
 					href: 'https://daneden.github.io/animate.css/',
 					src: '',
@@ -200,7 +203,7 @@
 					type: 'icon-iconfontmokuai',
 					date: '2016-05-03',
 					use: '',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				}, {
 					href: 'http://momentjs.com/',
 					src: '',
@@ -210,7 +213,7 @@
 					type: 'icon-iconfontmokuai',
 					date: '2016-05-03',
 					use: '',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				}, {
 					href: 'http://momentjs.com/',
 					src: '',
@@ -220,7 +223,7 @@
 					type: 'icon-iconfontmokuai',
 					date: '2016-05-03',
 					use: '',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				}, {
 					href: 'https://github.com/cubiq/iscroll/',
 					src: '',
@@ -230,7 +233,7 @@
 					type: 'icon-iconfontmokuai',
 					date: '2016-05-05',
 					use: '',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				},{
 					href: 'http://layer.layui.com/',
 					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/plugins12.png',
@@ -239,7 +242,7 @@
 					type: 'icon-iconfontmokuai',
 					date: '2016-05-05',
 					use: '',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				},{
 					href: 'https://github.com/inuyaksa/jquery.nicescroll',
 					src: '',
@@ -249,7 +252,7 @@
 					type: 'icon-iconfontmokuai',
 					date: '2016-05-05',
 					use: '',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				},{
 					href: 'https://www.jwplayer.com/',
 					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/plugins14.png',
@@ -259,12 +262,21 @@
 					type: 'icon-iconfontmokuai',
 					date: '2016-05-05',
 					use: '',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				}]
 			};
 			var data2 = {
 				title: '网站(web)',
 				content: [{
+					href: 'https://mva.microsoft.com/',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/win10-course.jpg',
+					title: 'Windows 课程',
+					content: '正在寻找面向 IT 专业人员的 Windows 课程？来看看这些课程吧！您将学习如何简化从早期版本的 Windows 操作系统迁移的方法。探索部署高级安全功能的最佳做法、工具和技巧，协助确保您的系统安全。',
+					type: 'icon-wangzhan',
+					date: '2016-05-06',
+					use: '',
+					header_src: user.mine
+				},{
 					href: 'http://jquery.cuishifeng.cn/',
 					src: '',
 					title: 'jQuery API 1.12.2 速查表',
@@ -273,7 +285,7 @@
 					type: 'icon-wangzhan',
 					date: '2016-05-03',
 					use: 'icon-yishiyong',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				}, {
 					href: 'http://www.jq22.com/',
 					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/web2.png',
@@ -282,7 +294,7 @@
 					type: 'icon-wangzhan',
 					date: '2016-05-03',
 					use: 'icon-yishiyong',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				}, {
 					href: 'http://div.io/topic/1540',
 					src: '',
@@ -292,7 +304,7 @@
 					type: 'icon-wangzhan',
 					date: '2016-05-03',
 					use: 'icon-yishiyong',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				}, {
 					href: 'http://div.io/digg',
 					src: '',
@@ -302,7 +314,7 @@
 					type: 'icon-wangzhan',
 					date: '2016-05-03',
 					use: 'icon-yishiyong',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				}, {
 					href: 'http://iconfont.cn/',
 					src: '',
@@ -312,7 +324,7 @@
 					type: 'icon-wangzhan',
 					date: '2016-05-03',
 					use: 'icon-yishiyong',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				},{
 					href: 'http://www.reqianduan.com/',
 					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/web5.png',
@@ -321,7 +333,7 @@
 					type: 'icon-wangzhan',
 					date: '2016-05-04',
 					use: 'icon-yishiyong',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				},{
 					href: 'http://www.requirejs.cn/home.html',
 					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/web6.png',
@@ -330,7 +342,7 @@
 					type: 'icon-wangzhan',
 					date: '2016-05-04',
 					use: '',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				},{
 					href: 'http://ued.taobao.org/blog/',
 					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/web7.png',
@@ -339,7 +351,7 @@
 					type: 'icon-wangzhan',
 					date: '2016-05-04',
 					use: 'icon-yishiyong',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				},{
 					href: 'https://isux.tencent.com/',
 					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/web8.jpg',
@@ -348,7 +360,7 @@
 					type: 'icon-wangzhan',
 					date: '2016-05-04',
 					use: '',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				},{
 					href: 'http://alloyteam.github.io/',
 					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/web9.jpg',
@@ -357,7 +369,7 @@
 					type: 'icon-wangzhan',
 					date: '2016-05-04',
 					use: '',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				},{
 					href: 'http://www.bootcss.com/',
 					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/web10.png',
@@ -366,7 +378,7 @@
 					type: 'icon-wangzhan',
 					date: '2016-05-04',
 					use: '',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				},{
 					href: 'http://alloyteam.github.io/Spirit/',
 					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/Mars_Rover.jpg',
@@ -375,7 +387,7 @@
 					type: 'icon-wangzhan',
 					date: '2016-05-04',
 					use: '',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				},{
 					href: 'http://cubic-bezier.com/',
 					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/web11.png',
@@ -384,7 +396,7 @@
 					type: 'icon-wangzhan',
 					date: '2016-05-04',
 					use: '',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				},{
 					href: 'http://www.getmarkman.com/',
 					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/web12.png',
@@ -393,7 +405,7 @@
 					type: 'icon-wangzhan',
 					date: '2016-05-04',
 					use: '',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				},{
 					href: 'http://alloyteam.github.io/AlloyStick/',
 					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/web13.png',
@@ -402,7 +414,7 @@
 					type: 'icon-wangzhan',
 					date: '2016-05-04',
 					use: '',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				},{
 					href: 'http://alvarotrigo.com/',
 					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/web14.png',
@@ -411,7 +423,7 @@
 					type: 'icon-wangzhan',
 					date: '2016-05-04',
 					use: '',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				},{
 					href: 'http://lib.csdn.net/',
 					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/web20.png',
@@ -420,7 +432,16 @@
 					type: 'icon-wangzhan',
 					date: '2016-05-04',
 					use: '',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
+				},{
+					href: 'http://developer.baidu.com/',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/web20.jpg',
+					title: '百度开发者中心',
+					content: '百度的社会福利',
+					type: 'icon-wangzhan',
+					date: '2016-05-04',
+					use: '',
+					header_src: user.mine
 				}]
 			};
 				var data3 = {
@@ -434,7 +455,7 @@
 					type: 'icon-wangzhan',
 					date: '2016-05-04',
 					use: 'icon-yishiyong',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+					header_src: user.mine
 				} ,{
 					href: '../footer_bottom/',
 					src: '',
@@ -444,11 +465,34 @@
 					type: 'icon-wangzhan',
 					date: '2016-05-04',
 					use: 'icon-yishiyong',
-					header_src: 'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
-				} ]};
+					header_src: user.mine
+				}]};
+			var data4={
+				title:'fit dream',
+				content:[{
+					href: 'http://www.zuojiaju.com/',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/web21.jpg',
+					title: '木工爱好者',
+					content: '木工爱好者论坛',
+					type: 'icon-wangzhan',
+					date: '2016-05-06',
+					use: '',
+					header_src: user.mine
+				},{
+					href: 'http://www.shouyihuo.com/view/7870.html',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/fit1.jpg',
+					title: '收纳柜',
+					content: '自制板条箱收纳柜 收纳柜的制作方法图解教程',
+					type: 'icon-wangzhan',
+					date: '2016-05-06',
+					use: 'icon-yishiyong',
+					header_src: user.mine
+				} ]
+			}
 			$('<ul>').appendTo('#y_content').addClass('inner_content').append(template('shape', data));
 			$('<ul>').appendTo('#y_content').addClass('inner_content').append(template('shape', data2));
 			$('<ul>').appendTo('#y_content').addClass('inner_content').append(template('shape', data3));
+			$('<ul>').appendTo('#y_content').addClass('inner_content').append(template('shape', data4));
 		</script>
 	</body>
 
