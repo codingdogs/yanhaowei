@@ -130,6 +130,9 @@ img {
     -webkit-user-select: none;
     background-color: #e7e7e7;
 }
+img.auto{
+    position: absolute;
+}
 input,
 button {
     border-radius: 0;
