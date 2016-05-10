@@ -121,7 +121,7 @@
 			</section>
 			<!--shape_list/e-->
 			<section class="shape_tabs bg_f">
-				<ul class="title box border_b">
+				<ul class="title box border_b change_fixed">
 					<li class="flex1 on have"><span>最热</span></li>
 					<li class="flex1"><span>最快</span></li>
 					<li class="flex1"><span>最新</span></li>
@@ -378,6 +378,10 @@
 					top: my.title_h,
 					position: 'fixed'
 				});
+				my.page('.ing',function(){
+					
+					$('[data-tap='+now_index+']').prepend(template('module', data));
+				})
 			})
 		</script>
 	</body>
