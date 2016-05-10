@@ -51,6 +51,7 @@ var tost_tt;
 var my = {
 	count: 0,
 	uid: '',
+	title_h:40,
 	scroll: 0,
 	system: 'ios',
 	url_attr: function(name) {
@@ -66,9 +67,9 @@ var my = {
 		return null;
 	},
 	tips: function(obj1, obj2, fn) {
-		var $warn=$('#warn')
+		var $warn = $('#warn')
 		$warn.find('em').html(obj2);
-		$warn.find('i')[0].className ="icon icon-"+obj1;
+		$warn.find('i')[0].className = "icon icon-" + obj1;
 		$warn.show();
 		var tt = setTimeout(function() {
 			$('#warn').hide();
@@ -211,6 +212,18 @@ var my = {
 		document.getElementById("warn").addEventListener('touchmove', function(e) {
 			e.preventDefault();
 		}, false);
+	},
+	lay_flex: function(obj, css1, css2) {
+		var $obj = $(obj);
+		var start_top = $obj.offset().top;
+		$(window).scroll(function() {
+			var $win = $(window);
+			if ($win.scrollTop() > start_top-my.title_h) {
+				$obj.css(css2);
+			} else {
+				$obj.css(css1);
+			}
+		})
 	}
 }
 if (!(navigator.userAgent).match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)) {

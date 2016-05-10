@@ -15,7 +15,8 @@ body {
 ul.href_lists {
     border-bottom: 1px solid $color-border;
     li {
-        text-align: center;
+        text-overflow:ellipsis;
+        overflow: hidden;
         &:nth-of-type(1) {
             i {
                 background-color: #f05554;
@@ -54,12 +55,13 @@ ul.href_lists {
             color: #fff;
         }
         span {
-            text-align: center;
             padding: 0 3px;
             font-size: 12px;
             color: #808080;
             display: block;
+            width: 100%;
             text-align: center;
+            @extend .ellipsis;
         }
     }
 }
@@ -153,7 +155,7 @@ section.meun_footer {
         color: $color_content;
         text-align: center;
         display: block;
-        width: 20%;
+        @extend .ellipsis;
         i.icon {
             font-size: 20px;
             display: inline-block;
@@ -192,6 +194,7 @@ section.shape_tabs {
     position: relative;
     ul.title {
         position: absolute;
+        background-color: #fff;
         top: 0;
         left: 0;
         z-index: 3;
@@ -200,6 +203,7 @@ section.shape_tabs {
         line-height: 45px;
         color: $color_content;
         font-size: 14px;
+        z-index: 29;
         li {
             text-align: center;
             position: relative;
@@ -261,7 +265,7 @@ section.shape_tabs {
                     font-size: 14px;
                     color: $color_title;
                     @include line_over(2);
-                    height: 33px;
+                    height: 36px;
                     margin: 15px 0;
                     line-height: 1.3em;
                 }
