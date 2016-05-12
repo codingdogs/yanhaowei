@@ -1,0 +1,51 @@
+section.form_shape {
+    div.form {
+        input::-webkit-input-placeholder {
+            color: #929292;
+        }
+        input,textarea{
+            padding: 8px;
+            color: #333;
+            width: 100%;
+            font-size: 14px;
+            border: 1px solid #dfdfdd;
+            margin-bottom: 10px;
+        }
+        input.pointer_no{
+            pointer-events: none;
+        }
+        div.input {
+            position: relative;
+            color: #929292;
+            select {
+                font-size: 14px;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                display: block;
+                bottom: 0;
+                opacity: 0;
+                z-index: 3;
+            }
+            em{
+                position: absolute;
+                z-index: 1;
+                right:2px;
+                top:5px;
+                opacity: 0.8;
+                font-size: 25px;
+            }
+        }
+        button {
+            background-color: #ff4049;
+            color: #fff;
+            text-align: center;
+            padding: 13px 0;
+            font-size: 14px;
+            display: block;
+            width: 100%;
+        }
+    }
+}

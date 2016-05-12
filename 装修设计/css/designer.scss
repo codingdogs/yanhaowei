@@ -1,0 +1,170 @@
+@import 'public';
+@import 'shapes/comment_shape';
+section.design_title {
+    position: relative;
+    overflow: hidden;
+    height: 3.6rem;
+    img.bg {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    div.body {
+        @extend .full_v_a;
+        color: #fff;
+        background-color: rgba(0,0,0,0.5);
+        div.title {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: 0 auto;
+            position: relative;
+            img {
+                @extend .full;
+                border-radius: 50%;
+                display: block;
+                border: 2px solid #fff;
+            }
+            button {
+                position: absolute;
+                display: block;
+                color: #c38b2a;
+                border: 1px solid #c38b2a;
+                text-align: center;
+                line-height: 20px;
+                background-color: transparent;
+                width: 55px;
+                font-size: 12px;
+                height: 20px;
+                top: 50%;
+                margin-top: -10px;
+                &:nth-of-type(1) {
+                    left: -75px;
+                }
+                &:nth-of-type(2) {
+                    right: -75px;
+                }
+            }
+        }
+        div.middle {
+            text-align: center;
+            margin-top: 5px;
+            font-size: 14px;
+            line-height: 1.3;
+            i {
+                font-size: 12px;
+            }
+        }
+        div.bottom {
+            position: absolute;
+            bottom: 13px;
+            width: 100%;
+            font-size: 12px;
+            height: 14px;
+            left: 0;
+            line-height: 1;
+            overflow: hidden;
+            span {
+                float: left;
+                width: 33.33%;
+                text-align: center;
+                &:nth-of-type(2) {
+                    border-left: 1px solid #767676;
+                    border-right: 1px solid #767676;
+                }
+                i {
+                    color: $color_logo;
+                }
+            }
+        }
+    }
+}
+div.design_href {
+    height: 43px;
+    position: relative;
+    overflow: hidden;
+    a {
+        float: left;
+        width: 50%;
+        line-height: 43px;
+        height: 100%;
+        font-size: 15px;
+        text-align: center;
+        color: #666;
+        i {
+            margin-right: 3px;
+            display: inline-block;
+            @include transform(0,0,1.3);
+        }
+    }
+}
+section.design_fonts {
+    section.title {
+        border-bottom: 1px solid #e0e0e0;
+        height: 30px;
+        line-height: 30px;
+        h3 {
+            color: #000;
+            float: left;
+            height: 100%;
+        }
+        span {
+            float: left;
+            height: 100%;
+            color: $color_content;
+            font-size: 12px;
+            margin-left: 12px;
+        }
+    }
+    section.content {
+        p {
+            color: 666;
+            font-size: 12px;
+            padding: 10px 0;
+            text-indent: 2em;
+        }
+    }
+}
+section.design_cases {
+    div.swiper-container {
+        height: 3.8rem;
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        div.swiper_scale {
+            width: 6rem;
+            position: absolute;
+            z-index: 30;
+            bottom: 13px;
+            left: 50%;
+            height: 1px;
+            margin-left: -3rem;
+            background-color: rgba(255,255,255,0.4);
+            i {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 2px;
+                background-color: #fff;
+                transition: all 0.5s;
+                -webkit-transition: all 0.5s;
+            }
+        }
+    }
+}
+section.comment ul.fonts li:last-of-type{
+    margin-bottom: 0!important;
+}
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//

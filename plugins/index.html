@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="renderer" content="webkit">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="email=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<meta name="apple-mobile-web-app-title" content="codewa">
+		<script src="../js/change_view.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			change.action(750, 1);
+		</script>
+		<link rel="stylesheet" type="text/css" href="../css/normal.css" />
+		<link rel="stylesheet" type="text/css" href="plugins.css" />
+		<link rel="apple-touch-icon-precomposed" href="http://7xkwkh.com1.z0.glb.clouddn.com/dog.png" />
+		<link rel="shortcut icon" href="http://7xkwkh.com1.z0.glb.clouddn.com/dog.ico" />
+		<title>插件</title>
+	</head>
+
+	<body>
+		<div id="y_content" class="auto_width">
+
+		</div>
+		<script type="text/html" id='shape'>
+			<h2>{{title}}</h2> 
+			{{each content as value i}}
+			<li>
+				<a href="{{value.href}}" target="_blank">
+					<div class="img_body lazy">
+						{{if value.src}}
+						<img src='http://7xkwkh.com1.z0.glb.clouddn.com/blank.gif' data-ysrc="{{value.src}}" class="auto" /> {{else}}
+						<em><span class="center">{{value.img_font}}</span></em> {{/if}}
+						<i class="icon_h5 {{value.use}}"></i>
+					</div>
+					<div class="font_content">
+						<h3 class="ellipsis"><i class="icon_h5 {{value.type}}"></i>{{value.title}}</h3>
+						<p>{{value.content}}</p>
+						<div class="bottom">
+							<img src='http://7xkwkh.com1.z0.glb.clouddn.com/blank.gif' data-ysrc="{{value.header_src}}" alt="" />
+							<span>{{value.date}}</span>
+						</div>
+					</div>
+				</a>
+			</li>
+			{{/each}}
+		</script>
+		<script src="../js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/m_layz_load.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/fastclick.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/template.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			window.addEventListener('load', function() {
+				FastClick.attach(document.body);
+			}, false);
+			var user={
+				mine:'http://7xkwkh.com1.z0.glb.clouddn.com/dog.png'
+			}
+			var data = {
+				title: '插件(plugins)',
+				content: [{
+					href: 'https://flowplayer.org/',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/flowplayer.jpg',
+					title: 'Flowplayer',
+					content: 'Flowplayer 是一个开源（GPL 3的）WEB视频播放器。您可以将该播放器嵌入您的网页中，如果您是开发人员，您还可以自由定制和配置播放器相关参数以达到您要的播放效果。',
+					type: 'icon-iconfontmokuai',
+					date: '2016-05-11',
+					use: 'icon-yishiyong',
+					header_src: user.mine
+				},{
+					href: 'http://kenwheeler.github.io/slick/',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/plugins40.png',
+					title: 'slick.js',
+					content: '8+,sclick是一款响应式、适用于移动设备触摸屏、可滑动显示的jQuery幻灯片插件。该幻灯片插件可以设置多种显示效果，可以自动播放，是一款移动优先的jQuery幻灯片插件。',
+					type: 'icon-iconfontmokuai',
+					date: '2016-05-11',
+					use: 'icon-yishiyong',
+					header_src: user.mine
+				},{
+					href: 'https://scottjehl.github.io/picturefill/',
+					img_font: 'Picturefill.js',
+					title: 'Picturefill',
+					content: '根据屏幕宽度分辨率不同的img',
+					type: 'icon-iconfontmokuai',
+					date: '2016-05-11',
+					use: 'icon-yishiyong',
+					header_src: user.mine
+				},{
+					href: 'http://eicon-iconfontmokuais.baidu.com/',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/echarts.png',
+					title: '图表插件',
+					content: 'Eicon-iconfontmokuais 3.0的这一切仅仅是一个新的开始,在探索和完善的道路上我们从未停止脚步Eicon-iconfontmokuais 3.0的这一切仅仅是一个新的开始,在探索和完善的道路上我们从未停止脚步的',
+					type: 'chart',
+					date: '2016-05-03',
+					use: 'icon-yishiyong',
+					header_src: user.mine
+				}, {
+					href: 'http://maroslaw.github.io/rainyday.js/',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/rain.jpg',
+					title: 'rainyday.js',
+					content: 'rainyday是一款基于 html5 canvas 的模拟下雨时雨滴打在玻璃窗上效果的js插件。该雨滴效果插件的特点是使用简单，易于集成。',
+					type: 'icon-my-yu',
+					date: '2016-05-03',
+					use: 'icon-yishiyong',
+					header_src: user.mine
+				}, {
+					href: 'https://github.com/florian/cookie.js',
+					src: '',
+					img_font: 'cookie',
+					title: 'cookie.js',
+					content: '如果你操作过cookie的接口，那么你一定会感觉这东西的规范真的是太复杂了，根本记不住啊，其实你是对的，因为cookie的接口设计的是有问题的，也就是说设计的太底层了，根本不友好，那么来试试这个js库吧。',
+					type: 'icon-cookie',
+					date: '2016-05-03',
+					use: '',
+					header_src: user.mine
+				}, {
+					href: 'https://github.com/marcuswestin/store.js',
+					src: '',
+					img_font: 'localStorage',
+					title: 'store.js',
+					content: '再来说说浏览器的localStore吧，这东西太赞了，可惜尼玛每个浏览器都实现的各不相同，我也是醉了，如果你也有同样的烦恼，不如来试试这个迷你库，它有更简单的api，最重要的是他解决了跨浏览器问题，甚至解决了低版本浏览器(ie6)不支持localStore的问题。',
+					type: 'icon-cookie',
+					date: '2016-05-03',
+					use: 'icon-shiyongzhong',
+					header_src: user.mine
+				}, {
+					href: 'http://fex-team.github.io/webuploader/',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/plugins1-1.png',
+					title: 'Web Uploader',
+					content: 'WebUploader是由Baidu WebFE(FEX)团队开发的一个简单的以HTML5为主，FLASH为辅的现代文件上传组件。在现代的浏览器里面能充分发挥HTML5的优势，同时又不摒弃主流IE浏览器，沿用原来的FLASH运行时，兼容IE6+，iOS 6+, android 4+。两套运行时，同样的调用方式，可供用户任意选用。',
+					type: 'icon-iconfontmokuai',
+					date: '2016-05-03',
+					use: '',
+					header_src: user.mine
+				}, {
+					href: 'https://github.com/aui/artTemplate/',
+					src: '',
+					img_font: 'artTemplate',
+					title: 'artTemplate',
+					content: '新一代 javascript 模板引擎',
+					type: 'icon-iconfontmokuai',
+					date: '2016-05-03',
+					use: 'icon-yishiyong',
+					header_src: user.mine
+				}, {
+					href: 'http://lab.ejci.net/favico.js/',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/plugins2.png',
+					title: 'favico.js',
+					content: '在favico上添加数字书不是很nice，点击下面的官网查看效果，这肯定要逼死强迫症了。',
+					type: 'icon-iconfontmokuai',
+					date: '2016-05-03',
+					use: '',
+					header_src: user.mine
+				}, {
+					href: 'http://overtrue.me/share.js/',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/plugins3.png',
+					title: 'share.js',
+					content: '如果你受够了分享组件的烦恼，那么来试试这个对移动端有好的分享组件吧，界面优美，看起来很赞。',
+					type: 'icon-iconfontmokuai',
+					date: '2016-05-03',
+					use: '',
+					header_src: user.mine
+				}, {
+					href: 'http://mathjs.org/',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/plugins4.png',
+					title: 'math.js',
+					content: 'js自带的数学运算不能满足你的需求了，那试试这个，扩展了很多数学运算。',
+					type: 'icon-iconfontmokuai',
+					date: '2016-05-03',
+					use: '',
+					header_src: user.mine
+				}, {
+					href: 'https://github.com/jaredreich/notie',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/plugins.gif',
+					title: 'notie.js',
+					content: '还在使用弹窗通知用户，太low了，快来试试这款非阻塞式，小清新的通知插件吧，对移动端有好，界面好到爆炸啊。',
+					type: 'icon-iconfontmokuai',
+					date: '2016-05-03',
+					use: '',
+					header_src: user.mine
+				}, {
+					href: 'http://visionmedia.github.io/move.js/',
+					src: '',
+					img_font: 'move.js',
+					title: 'move.js',
+					content: '如果你操作过css3的属性，一定会觉得非常痛苦的，那不如来试试合格，css3动画瞬间变得简单了。',
+					type: 'icon-iconfontmokuai',
+					date: '2016-05-03',
+					use: '',
+					header_src: user.mine
+				}, {
+					href: 'http://www.swiper.com.cn/',
+					src: '',
+					img_font: 'swiper.js',
+					title: 'swiper.js',
+					content: '开源、免费、强大的移动端触摸滑动插件',
+					type: 'icon-iconfontmokuai',
+					date: '2016-05-03',
+					use: '',
+					header_src: user.mine
+				}, {
+					href: 'http://momentjs.com/',
+					src: '',
+					img_font: 'Moment.js ',
+					title: 'Moment.js',
+					content: '使用moment.js轻松管理日期和时间',
+					type: 'icon-iconfontmokuai',
+					date: '2016-05-03',
+					use: '',
+					header_src: user.mine
+				}, {
+					href: 'https://github.com/loktar00/JQuery-Snowfall',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/plugins8.png',
+					title: 'JQuery-Snowfall',
+					content: 'pc使用较为流畅，兼容性强，已经用到项目中',
+					type: 'icon-iconfontmokuai',
+					date: '2016-05-03',
+					title: 'animate.css', 
+					use: 'icon-yishiyong',
+					header_src: user.mine
+				}, {
+					href: 'https://daneden.github.io/animate.css/',
+					src: '',
+					img_font: 'animate.css ',
+					content: 'Just-add-water CSS animations',
+					type: 'icon-iconfontmokuai',
+					date: '2016-05-03',
+					use: '',
+					header_src: user.mine
+				}, {
+					href: 'http://momentjs.com/',
+					src: '',
+					img_font: 'Moment.js ',
+					title: 'Moment.js',
+					content: '使用moment.js轻松管理日期和时间',
+					type: 'icon-iconfontmokuai',
+					date: '2016-05-03',
+					use: '',
+					header_src: user.mine
+				}, {
+					href: 'http://momentjs.com/',
+					src: '',
+					img_font: 'Moment.js ',
+					title: 'Moment.js',
+					content: '使用moment.js轻松管理日期和时间',
+					type: 'icon-iconfontmokuai',
+					date: '2016-05-03',
+					use: '',
+					header_src: user.mine
+				}, {
+					href: 'https://github.com/cubiq/iscroll/',
+					src: '',
+					img_font: 'iscroll.js ',
+					title: 'iscroll.js',
+					content: 'iScroll, smooth scrolling for the web',
+					type: 'icon-iconfontmokuai',
+					date: '2016-05-05',
+					use: '',
+					header_src: user.mine
+				},{
+					href: 'http://layer.layui.com/',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/plugins12.png',
+					title: 'layer.js',
+					content: '一个让你想即可以做到的web弹窗组件，layer兼容了包括IE6在内的所有主流浏览器。',
+					type: 'icon-iconfontmokuai',
+					date: '2016-05-05',
+					use: '',
+					header_src: user.mine
+				},{
+					href: 'https://github.com/inuyaksa/jquery.nicescroll',
+					src: '',
+					img_font:'jQuery.NiceScroll',
+					title: 'jQuery.NiceScroll.js',
+					content: '兼容ie6，手机的滚动条插件',
+					type: 'icon-iconfontmokuai',
+					date: '2016-05-05',
+					use: '',
+					header_src: user.mine
+				},{
+					href: 'https://www.jwplayer.com/',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/plugins14.png',
+					img_font:'',
+					title: 'jwplayer',
+					content: 'Plays everywhere, every time.',
+					type: 'icon-iconfontmokuai',
+					date: '2016-05-05',
+					use: '',
+					header_src: user.mine
+				}]
+			};
+			var data2 = {
+				title: '网站(web)',
+				content: [{
+					href: 'http://fis.baidu.com/',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/web16-05-10.png',
+					title: 'FIS3 ',
+					content: 'FIS3 , 为你定制的前端工程构建工具解决前端开发中自动化工具、性能优化、模块化框架、开发规范、代码部署、开发流程等问题。',
+					type: 'icon-wangzhan',
+					date: '2016-05-10',
+					use: '',
+					header_src: user.mine
+				},{
+					href: 'http://www.cnblogs.com/lhb25/p/15-excellent-html5-jquery-plugins.html',
+					src: '',
+					img_font:' HTML5 & jQuery',
+					title: '网站开发中很实用的 HTML5 & jQuery 插件 ',
+					content: '　这篇文章挑选了15款在网站开发中很实用的 HTML5 & jQuery 插件，如果你正在寻找能优化网站，使其更具创造力和视觉冲击，那么本文正是你需要的。这些优秀的 jQuery 插件能为你的网站提供各种各样强大的功能和效果。',
+					type: 'icon-wangzhan',
+					date: '2016-05-10',
+					use: '',
+					header_src: user.mine
+				},{
+					href: 'https://mva.microsoft.com/',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/win10-course.jpg',
+					title: 'Windows 课程',
+					content: '正在寻找面向 IT 专业人员的 Windows 课程？来看看这些课程吧！您将学习如何简化从早期版本的 Windows 操作系统迁移的方法。探索部署高级安全功能的最佳做法、工具和技巧，协助确保您的系统安全。',
+					type: 'icon-wangzhan',
+					date: '2016-05-06',
+					use: '',
+					header_src: user.mine
+				},{
+					href: 'http://jquery.cuishifeng.cn/',
+					src: '',
+					title: 'jQuery API 1.12.2 速查表',
+					img_font: 'jQuery API',
+					content: 'jQuery API 1.12.2 速查表  --作者：Shifone',
+					type: 'icon-wangzhan',
+					date: '2016-05-03',
+					use: 'icon-yishiyong',
+					header_src: user.mine
+				}, {
+					href: 'http://www.jq22.com/',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/web2.png',
+					title: 'jQuery插件库',
+					content: 'Look For Less,Do More',
+					type: 'icon-wangzhan',
+					date: '2016-05-03',
+					use: 'icon-yishiyong',
+					header_src: user.mine
+				}, {
+					href: 'http://div.io/topic/1540',
+					src: '',
+					title: 'jQuery小插件',
+					img_font: 'javascript迷你库',
+					content: '不可错过的javascript迷你库',
+					type: 'icon-wangzhan',
+					date: '2016-05-03',
+					use: 'icon-yishiyong',
+					header_src: user.mine
+				}, {
+					href: 'http://div.io/digg',
+					src: '',
+					title: 'DIV.IO',
+					img_font: '发现',
+					content: 'javascript库',
+					type: 'icon-wangzhan',
+					date: '2016-05-03',
+					use: 'icon-yishiyong',
+					header_src: user.mine
+				}, {
+					href: 'http://iconfont.cn/',
+					src: '',
+					title: 'iconfont',
+					img_font: 'iconfont',
+					content: 'Iconfont.cn是由阿里巴巴UX部门推出的矢量图标管理网站，也是国内首家推广Webfont形式图标的平台。',
+					type: 'icon-wangzhan',
+					date: '2016-05-03',
+					use: 'icon-yishiyong',
+					header_src: user.mine
+				},{
+					href: 'http://www.reqianduan.com/',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/web5.png',
+					title: '热前端',
+					content: '前端开发学习网站',
+					type: 'icon-wangzhan',
+					date: '2016-05-04',
+					use: 'icon-yishiyong',
+					header_src: user.mine
+				},{
+					href: 'http://www.requirejs.cn/home.html',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/web6.png',
+					title: 'RequireJS',
+					content: 'RequireJS 是一个JavaScript模块加载器。它非常适合在浏览器中使用, 它非常适合在浏览器中使用，但它也可以用在其他脚本环境, 就像 Rhino and Node. 使用RequireJS加载模块化脚本将提高代码的加载速度和质量。',
+					type: 'icon-wangzhan',
+					date: '2016-05-04',
+					use: '',
+					header_src: user.mine
+				},{
+					href: 'http://ued.taobao.org/blog/',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/web7.png',
+					title: 'TaoBaoUed',
+					content: '淘宝ued官方博客',
+					type: 'icon-wangzhan',
+					date: '2016-05-04',
+					use: 'icon-yishiyong',
+					header_src: user.mine
+				},{
+					href: 'https://isux.tencent.com/',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/web8.jpg',
+					title: 'ISUX',
+					content: '腾讯社交用户体验设计，简称ISUX (Internet Social User Experience)，成立于2011年1月11日，是腾讯集团核心、全球最具规模的UX设计团队，专业成员包括用户研究、交互设计、视觉设计、品牌设计、视频动画设计、UI开发、产品设计与市场研究等，至今ISUX分布于中国深圳总部、北京、上海、成都及韩国首尔。',
+					type: 'icon-wangzhan',
+					date: '2016-05-04',
+					use: '',
+					header_src: user.mine
+				},{
+					href: 'http://alloyteam.github.io/',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/web9.jpg',
+					title: 'Tencent AlloyTeam ',
+					content: 'Tencent Works List',
+					type: 'icon-wangzhan',
+					date: '2016-05-04',
+					use: '',
+					header_src: user.mine
+				},{
+					href: 'http://www.bootcss.com/',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/web10.png',
+					title: 'Bootstrap',
+					content: '简洁、直观、强悍的前端开发框架，让web开发更迅速、简单。',
+					type: 'icon-wangzhan',
+					date: '2016-05-04',
+					use: '',
+					header_src: user.mine
+				},{
+					href: 'http://alloyteam.github.io/Spirit/',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/Mars_Rover.jpg',
+					title: 'Spirit',
+					content: '腾讯移动Web整体解决方案。',
+					type: 'icon-wangzhan',
+					date: '2016-05-04',
+					use: '',
+					header_src: user.mine
+				},{
+					href: 'http://cubic-bezier.com/',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/web11.png',
+					title: 'cubic-bezier',
+					content: 'cubic-bezier。',
+					type: 'icon-wangzhan',
+					date: '2016-05-04',
+					use: '',
+					header_src: user.mine
+				},{
+					href: 'http://www.getmarkman.com/',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/web12.png',
+					title: '马克鳗',
+					content: '高效的设计稿标注、测量工具',
+					type: 'icon-wangzhan',
+					date: '2016-05-04',
+					use: '',
+					header_src: user.mine
+				},{
+					href: 'http://alloyteam.github.io/AlloyStick/',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/web13.png',
+					title: 'AlloyStick',
+					content: 'Skeleton animation for HTML5。',
+					type: 'icon-wangzhan',
+					date: '2016-05-04',
+					use: '',
+					header_src: user.mine
+				},{
+					href: 'http://alvarotrigo.com/',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/web14.png',
+					title: 'fullpage....',
+					content: 'fullpage,pagepiling,multiScroll。',
+					type: 'icon-wangzhan',
+					date: '2016-05-04',
+					use: '',
+					header_src: user.mine
+				},{
+					href: 'http://lib.csdn.net/',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/web20.png',
+					title: '知识库',
+					content: '知识库，你身边的技术百科全书',
+					type: 'icon-wangzhan',
+					date: '2016-05-04',
+					use: '',
+					header_src: user.mine
+				},{
+					href: 'http://developer.baidu.com/',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/web20.jpg',
+					title: '百度开发者中心',
+					content: '百度的社会福利',
+					type: 'icon-wangzhan',
+					date: '2016-05-04',
+					use: '',
+					header_src: user.mine
+				}]
+			};
+				var data3 = {
+				title: 'myself',
+				content: [{
+					href: '../baidu_sou_api/',
+					src: '',
+					title: 'baidu-search_list',
+					img_font: 'search_list',
+					content: '百度搜索API调用',
+					type: 'icon-wangzhan',
+					date: '2016-05-04',
+					use: 'icon-yishiyong',
+					header_src: user.mine
+				} ,{
+					href: '../footer_bottom/',
+					src: '',
+					title: 'footer',
+					img_font: 'footer',
+					content: 'footer底部',
+					type: 'icon-wangzhan',
+					date: '2016-05-04',
+					use: 'icon-yishiyong',
+					header_src: user.mine
+				}]};
+			var data4={
+				title:'fit dream',
+				content:[{
+					href: 'http://www.zuojiaju.com/',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/web21.jpg',
+					title: '木工爱好者',
+					content: '木工爱好者论坛',
+					type: 'icon-wangzhan',
+					date: '2016-05-06',
+					use: '',
+					header_src: user.mine
+				},{
+					href: 'http://www.shouyihuo.com/view/7870.html',
+					src: 'http://7xkwkh.com1.z0.glb.clouddn.com/fit1.jpg',
+					title: '收纳柜',
+					content: '自制板条箱收纳柜 收纳柜的制作方法图解教程',
+					type: 'icon-wangzhan',
+					date: '2016-05-06',
+					use: 'icon-yishiyong',
+					header_src: user.mine
+				} ]
+			}
+			$('<ul>').appendTo('#y_content').addClass('inner_content').append(template('shape', data));
+			$('<ul>').appendTo('#y_content').addClass('inner_content').append(template('shape', data2));
+			$('<ul>').appendTo('#y_content').addClass('inner_content').append(template('shape', data3));
+			$('<ul>').appendTo('#y_content').addClass('inner_content').append(template('shape', data4));
+		</script>
+	</body>
+
+</html>
