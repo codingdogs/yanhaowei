@@ -1,0 +1,130 @@
+@import '../public';
+section.search_end {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    h3 {
+        color: $color_title;
+    }
+    button {
+        color: $color_logo;
+        cursor: pointer;
+        padding-left: 10px;
+    }
+}
+ul.search_end_content {
+    overflow: hidden;
+    li {
+        background-color: #fff;
+        border-bottom: 1px solid $color_border;
+        overflow: hidden;
+        display: block;
+        position: relative;
+        &[data-left-bar]:before {
+            content: attr(data-left-bar);
+            background-color: #9c84cb;
+            font-size: 12px;
+            text-align: center;
+            width: 25px;
+            position: absolute;
+            left: 6px;
+            z-index: 3;
+            top: 0;
+            color: #fff;
+            -webkit-transform-origin: top center;
+            -webkit-transform: scale(0.8);
+            -ms-transform: scale(0.8);
+            -o-transform: scale(0.8);
+            transform: scale(0.8);
+        }
+        a {
+            overflow: hidden;
+            padding: 15px;
+            height: 100%;
+            font-size: 12px;
+            div.lazy {
+                width: 60px;
+                height: 60px;
+                overflow: hidden;
+                position: relative;
+                display: block;
+                background-color: #ccc;
+            }
+            div.middle {
+                padding: 0 15px;
+                color: #333;
+                line-height: 1.3em;
+                p:nth-of-type(1) {
+                    @include line_over(2);
+                    color: $color_logo;
+                    span {
+                        color: $color_title;
+                    }
+                }
+                span.tiao {
+                    width: 100%;
+                    height: 4px;
+                    margin: 7px 0;
+                    overflow: hidden;
+                    background-color: #f2f2f2;
+                    border-radius: 5px;
+                    position: relative;
+                    display: block;
+                    i {
+                        position: absolute;
+                        left: 0;
+                        height: 100%;
+                        border-radius: 5px;
+                        @include gradient();
+                    }
+                }
+                p:nth-of-type(2) {
+                    color: $color_content;
+                    overflow: hidden;
+                    height: 1.3em;
+                    position: relative;
+                    span {
+                        position: absolute;
+                        float: left;
+                        @extend .ellipsis;
+                        width: 50%;
+                        &:last-of-type {
+                            left: 50%;
+                            text-align: right;
+                            i {
+                                color: #009bff;
+                            }
+                        }
+                    }
+                }
+            }
+            button {
+                display: block;
+                font-size: 12px;
+                color: #fbb03b;
+                border-radius: 2px;
+                padding: 0 8px;
+                height: 24px;
+                line-height: 24px;
+                border: 1px solid #fbb03b;
+                margin-top: 20px;
+            }
+        }
+    }
+}
+section.add {
+    padding: 15px;
+    button {
+        height: 36px;
+        line-height: 36px;
+        color: $color_content;
+        font-size: 15px;
+        text-align: center;
+        display: block;
+        width: 100%;
+        background-color: #fff;
+        border-radius: 2px;
+        cursor: pointer;
+    }
+}

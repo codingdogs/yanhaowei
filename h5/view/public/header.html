@@ -1,8 +1,51 @@
 <i class="back icon icon-back"></i>
 <i class="icon icon-meun_search need_search"></i>
-<h3 class="ellipsis" id='public_title'><span class="ellipsis"></span></h3>
+<h3 class="ellipsis" id='public_title'><span class="ellipsis d_title"></span></h3>
+<form action="../search/" class="public_form_search">
+	<div class="box">
+		<em class="icon icon-search"></em>
+		<input type="search" name="search" id="" value="" class="flex1" placeholder="搜索感兴趣的宝贝" autocomplete="off" />
+	</div>
+</form>
 <i class="message icon icon-xiaoxi"></i>
-<i class="message icon icon-xiaoxi"></i>
+<i class="message icon icon-shopcar" data-rightBar='2'></i>
 <script type="text/javascript">
-	$('#public_title span').html(document.title);
+	$(function() {
+		$('#public_title span.d_title').html(document.title);
+		$('#public_header i.back').click(function() {
+			history.go(-1)
+		});
+		var $search = $('#public_header form input');
+		$search.val(my.url_attr('search'));
+		$('form.public_form_search').submit(function(e) {
+			var $search_val = $.trim($search.val());
+			var search_history=store.get('search_history');
+			if ($search_val == '') {
+				my.toast('请输入搜索内容！');
+				return false;
+			} else {
+				my.show_loading();
+				if (search_history == undefined) {
+					var search_data = [$search_val];
+				} else {
+					console.log(search_history)
+					search_history = JSON.parse(search_history);
+					var search_data = search_history.data;
+					var same_flag = false;
+					for (var s = 0; s < search_data.length; s++) {
+						if (search_data[s] == $search_val) {
+							same_flag = true;
+							break;
+						}
+					};
+					if (!same_flag) {
+						search_data.push($search_val);
+					}
+				}
+				store.set('search_history', JSON.stringify({
+					data: search_data
+				}));
+			}
+		});
+	});
 </script>

@@ -55,16 +55,14 @@ var my = {
 	scroll: 0,
 	system: 'ios',
 	url_attr: function(name) {
-		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-		var r = window.location.search.substr(1).match(reg);
-		if (r != null) return unescape(r[2]);
-		return null;
-	},
-	url_attr_cn: function(name) {
-		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-		var r = decodeURI(window.location.href).substr(1).match(reg);
-		if (r != null) return unescape(r[2]);
-		return null;
+		var LocString=String(window.document.location.href); 
+		var rs = new RegExp("(^|)"+name+"=([^/&]*)(/&|$)","gi").exec(LocString), tmp;   
+       
+        if(tmp=rs){   
+            return decodeURI(tmp[2]);   
+        }   
+        // parameter cannot be found   
+        return "";   
 	},
 	tips: function(obj1, obj2, fn) {
 		var $warn = $('#warn')
@@ -76,6 +74,7 @@ var my = {
 			if (fn) {
 				fn();
 			}
+			clearTimeout(tt);
 		}, 2000);
 	},
 	toast: function(obj) {
@@ -181,11 +180,17 @@ var my = {
 		my.scroll = 0;
 	},
 	public: function(path, type) {
+		//1:首页2：搜索结果页面
 		if (type == 1) {
-			$('<section id="public_header" class="index">').prependTo('body').load(path + 'header.html', function() {
-				//				alert(1)
-			});
+			var now_class="index";
+		} else if(type == 2) {
+			var now_class="search";
+		}else if(type==3){
+			var now_class='search1'
 		}
+		$('<section id="public_header" class='+now_class+'>').prependTo('body').load(path + 'header.html', function() {
+			//				alert(1)
+		});
 		//添加loading模块/S
 		$("<section id='ajax_loading'><div><i></i></div></section>").appendTo('body');
 		document.getElementById("ajax_loading").addEventListener('touchmove', function(e) {
@@ -208,11 +213,12 @@ var my = {
 		$('body').on('click', '.need_search', function() {
 				if (!my.search) {
 					my.show_loading();
-					$('<section id="public_search">').prependTo('body').load(path + 'search.html', function() {
+					$('<section id="public_search" class="change_fixed">').prependTo('body').load(path + 'search.html', function() {
 						my.search = true;
 						my.hide_loading();
 						$('#public_search').show();
 						my.view_no_scroll();
+						$('.form_search').attr('action',path+'../search/')
 					});
 				} else {
 					$('#public_search').show();

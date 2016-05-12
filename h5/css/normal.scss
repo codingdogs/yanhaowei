@@ -185,7 +185,7 @@ img.go_opacity {
 }
 @font-face {
     font-family: 'icon';
-    src: url('//at.alicdn.com/t/font_1463024867_1426396.ttf') format('truetype');
+    src: url('//at.alicdn.com/t/font_1463063145_6449213.ttf') format('truetype');
     /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
 }
 .icon {
@@ -351,7 +351,7 @@ section#ajax_loading {
         transform: none;
     }
 }
-a.active{
+a.active {
     opacity: 0.9;
 }
 button:active {
@@ -527,6 +527,9 @@ section#warn {
 .icon-search:before {
     content: "\e60d";
 }
+.icon-shopcar:before {
+    content: "\e60e";
+}
 //login=====e
 //公共部分样式/s
 section#public_header {
@@ -548,18 +551,25 @@ section#public_header {
         height: 100%;
         text-align: center;
         width: 40px;
-        display: block;
+        display: none;
         font-size: 20px;
         z-index: 3;
         display: none;
         cursor: pointer;
     }
-    i.icon-xiaoxi {
+    i.icon-xiaoxi,
+    i.icon-shopcar {
         left: initial;
         right: 0;
     }
-    i.back {
-        display: block;
+    i.icon-shopcar {
+        font-size: 26px;
+        &:after {
+            background-color: #ccc;
+            right: 3px;
+            top: 5px;
+            color: #f05455;
+        }
     }
     h3 {
         padding: 0 40px;
@@ -573,14 +583,60 @@ section#public_header {
             text-align: center;
         }
     }
+    form.public_form_search {
+        display: none;
+        padding: 5px 40px;
+        width: 100%;
+        overflow: hidden;
+        height: 100%;
+        div{
+            background-color: #fff;
+            height: 30px;
+            border-radius: 2px;
+            font-size: 15px;
+            line-height: 30px;
+            position: relative;
+            width: 100%;
+            em.icon{
+                display: block!important;
+                color: #b3b3b3;
+                display: block;
+                height: 100%;
+                padding:0 10px;
+            }
+            input{
+               display: block; 
+               padding-right:10px;
+            }
+        }
+    }
 }
 section.index {
-    i.back {
-        display: none!important;
-    }
     i.icon-meun_search,
     i.icon-xiaoxi {
         display: block!important;
+    }
+}
+section.search {
+    h3 {
+        display: none!important;
+    }
+    i.icon-shopcar,
+    i.icon-back,
+    form.public_form_search {
+        display: block!important;
+    }
+}
+section.search1{
+    h3{
+        display: none!important;
+    }
+    i.icon-back,
+    form.public_form_search {
+        display: block!important;
+    }
+    form.public_form_search{
+        padding-right:10px!important;
     }
 }
 body {
@@ -631,10 +687,8 @@ section#public_search {
     position: fixed;
     display: none;
     z-index: 40;
-    left: 0;
     top: 0;
     background-color: #f2f2f2;
-    width: 100%;
     height: 100%;
     overflow: hidden;
     form {
@@ -743,6 +797,47 @@ section#public_search {
 .no_scroll {
     overflow: hidden!important;
 }
+//有上脚小圆点/s
+*[data-rightBar]:after {
+    content: attr(data-rightBar);
+    position: absolute;
+    font-size: 12px;
+    color: #fff;
+    background-color: #f05455;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    text-align: center;
+    right: -5px;
+    top: 0;
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+}
+section.h_title {
+        height: 45px;
+        line-height: 45px;
+        background-color: #fff;
+        h3 {
+            font-size: 15px;
+            color: #333;
+        }
+        a {
+            color: #808080;
+            font-size: 12px;
+            i {
+                display: inline-block;
+                margin-left: 8px;
+            }
+        }
+    }
+    .m_top{
+        margin-top:10px;
+    }
+    .m_bot{
+        margin-bottom:10px;
+    }
+//有上脚小圆点/e
 //公共部分样式/e
 //
 //
