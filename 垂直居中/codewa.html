@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="renderer" content="webkit">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="email=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+		<meta name="apple-mobile-web-app-title" content="codewa">
+		<link rel="stylesheet" type="text/css" href="../css/normal.css" />
+		<link rel="apple-touch-icon-precomposed" href="http://7xkwkh.com1.z0.glb.clouddn.com/dog.png" />
+		<link rel="shortcut icon" href="http://7xkwkh.com1.z0.glb.clouddn.com/dog.ico" />
+		<title>codewa</title>
+	</head>
+	<style type="text/css">
+		li {
+			width: 1200px;
+			margin: 10px auto;
+			border-bottom: 1px solid #999999;
+			overflow: hidden;
+		}
+		
+		li h2 {
+			font-size: 14px;
+			padding: 3px;
+			color: #333;
+		}
+		
+		div.parents,
+		div.last {
+			width: 300px;
+			height: 300px;
+			border: 1px solid red;
+			margin: 10px;
+			float: left;
+		}
+		
+		div.one {
+			text-align: center;
+			line-height: 300px;
+			/*font-size: 0;*/
+		}
+		
+		div.one img {
+			vertical-align: middle;
+			/*测试加不加都可以*/
+		}
+		
+		div.parents img {
+			width: 100px;
+			height: 200px;
+		}
+		
+		div.parents img:last-of-type {
+			width: 100px;
+			height: 50px;
+		}
+		
+		div.two {
+			display: table;
+			text-align: center;
+		}
+		
+		div.two .children {
+			display: table-cell;
+			vertical-align: middle;
+		}
+		
+		div.two i {
+			display: inline-block;
+			vertical-align: middle;
+			height: 100%;
+		}
+		
+		div.two span {
+			width: 200px;
+			display: inline-block;
+		}
+		
+		div.three img {
+			display: block;
+			margin: auto
+		}
+		
+		.last {
+			background: deeppink;
+			+position: relative;
+			/*作为parent的定位父级*/
+			display: table;
+		}
+		
+		.last .last_parent {
+			display: table-cell;
+			vertical-align: middle;
+			+position: absolute;
+			/*对parent定位让他存在在wrap高度的50%位置，内容由child撑开*/
+			+top: 50%;
+			/*+border:1px solid yellow*/
+		}
+		/*子级会继承父级的absolute属性，也就是如果存在在wrap50%的位置，
+			 * 而现在他相对与自身向上移动50%；就达到了垂直居中的目的*/
+		
+		.last .last_children {
+			background: aquamarine;
+			+position: relative;
+			+top: -50%;
+			text-align: center;
+		}
+		
+		img {
+			vertical-align: middle;
+		}
+		
+		.last img {
+			width: 200px;
+		}
+		/*消除几px的空隙*/
+		
+		
+		div.my{
+			position: relative;
+		}
+		div.my_children{
+			position: absolute;
+			top:50%;
+			text-align: center;
+			width: 100%;
+			overflow: hidden;
+		}
+		div.my_children img{
+			position: relative;
+			top:-50%;
+			width: 200px!important;
+			height: 200px!important;
+			display: inline-block;
+		}
+	</style>
+<!--svn://124.42.118.35/qianniuDocs
+	yanhaowei=yanhaoweiabc1234
+-->
+	<body>
+		<ul>
+			<li>
+				<h2>1.通过设置line-height和img的属性实现图片的垂直居中（当然了只能是图片，不兼容IE6 ）</h2>
+				<div class="one parents">
+					<img src="http://7xkwkh.com1.z0.glb.clouddn.com/dog.png" />
+				</div>
+				<div class="one parents">
+					<img src="http://7xkwkh.com1.z0.glb.clouddn.com/dog.png" />
+					<img src="http://7xkwkh.com1.z0.glb.clouddn.com/dog.png" />
+				</div>
+			</li>
+			<li>
+				<h2>2通过设置display：table-cell;和vertical-top:middle;(可以实现多行文本垂直居中（不兼容IE6，IE7）这里先不提多行兼容IE6 7的处理方法可以实现图片垂直居中，然而IE6 7也不支持,为了支持图片的垂直居中，采用了空span的方法 注意貌似span方法只能结合display:table-cell方法使用)</h2>
+				<div class="two parents">
+					<div class="children">
+						<img src="http://7xkwkh.com1.z0.glb.clouddn.com/dog.png" />
+					</div>
+				</div>
+				<div class="two parents">
+					<img src="http://7xkwkh.com1.z0.glb.clouddn.com/dog.png" />
+					<img src="http://7xkwkh.com1.z0.glb.clouddn.com/dog.png" />
+					<i></i>
+				</div>
+				<div class="two parents">
+					<div class="children">
+						<span>sdfsdafkjasdjfjsajdfjjsadfjjsdfjasjfsdfsdafkjasdjfjsajdfjjsadfjjsdfjasjfsdfsdafkjasdjfjsajdfjjsadfjjsdfjasjf</span>
+						<i></i>
+					</div>
+
+				</div>
+			</li>
+			<li>
+				<div class="three parents">
+					<img src="http://7xkwkh.com1.z0.glb.clouddn.com/dog.png" />
+				</div>
+			</li>
+			<li>
+				<h2>如此就可做到兼容，将上面两种方式结合起来（这里多行文字的垂直居中和图片的垂直居中都可以实现，兼容所有浏览器）</h2>
+				<div class="last">
+					<div class="last_parent">
+						<div class="last_children">
+							<img src="http://7xkwkh.com1.z0.glb.clouddn.com/dog.png" />
+						</div>
+					</div>
+				</div>
+				<div class="last">
+					<div class="last_parent">
+						<div class="last_children">
+							<img src="http://7xkwkh.com1.z0.glb.clouddn.com/dog.png" />
+						</div>
+					</div>
+				</div>
+				<div class="last">
+					<div class="last_parent">
+						<div class="last_children">
+							<span>sdkfkakdfk</span>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</body>
+
+</html>

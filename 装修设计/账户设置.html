@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="renderer" content="webkit">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="email=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<script src="js/change_view.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			change.action(750);
+		</script>
+		<meta name="apple-mobile-web-app-title" content="装修设计">
+		<link rel="stylesheet" type="text/css" href="css/normal.css" />
+		<link rel="apple-touch-icon-precomposed" href="http://icon.dyrs.cc/zxsj/zhuangxiusheji.png" />
+		<link rel="shortcut icon" href="http://icon.dyrs.cc/zxsj/zhuangxiusheji.ico" />
+		<title>账户设置</title>
+	</head>
+	<style type="text/css">
+		ul.list {
+			margin-top: 0.25rem;
+			padding-left: 0.25rem;
+		}
+		
+		ul.list li {
+			padding: 16px 0;
+			border-bottom: 1px solid #e9e9e9;
+			padding-right: 25px;
+			font-size: 14px;
+			color: #333;
+			position: relative;
+		}
+		
+		ul.list li:after {
+			position: absolute;
+			width: 25px;
+			text-align: center;
+			line-height: 1em;
+			right: 0;
+			top: 50%;
+			display: block;
+			content: '\e603';
+			color: #666;
+			-webkit-transform: translate(0, -50%) rotate(180deg);
+			transform: translate(0, -50%) rotate(180deg);
+			-ms-transform: translate(0, -50%) rotate(180deg);
+			-moz-transform: translate(0, -50%) rotate(180deg);
+			font-family: "iconfont";
+			font-style: normal;
+			-webkit-font-smoothing: antialiased;
+			-webkit-text-stroke-width: 0.2px;
+			-moz-user-select: none;
+			-webkit-user-select: none;
+		}
+		
+		ul.list li.no_bar:after {
+			opacity: 0;
+		}
+		
+		ul.list li a {
+			display: block;
+			overflow: hidden;
+			color: #333;
+		}
+		
+		ul.list li span {
+			float: left;
+			width: 50%;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 100%;
+		}
+		
+		ul.list li span:nth-of-type(2) {
+			color: #666;
+			text-align: right;
+		}
+		
+		ul.list li:last-of-type {
+			border-bottom: none;
+		}
+		
+		ul.list li img {
+			width: 45px;
+			height: 45px;
+			border-radius: 50%;
+			float: right;
+		}
+		
+		ul.list li:first-of-type span {
+			height: 45px;
+			line-height: 45px;
+		}
+	</style>
+
+	<body>
+		<div id="content">
+			<ul class="list border">
+				<li class="no_bar">
+					<a>
+						<span>头像</span>
+						<img src="http://icon.dyrs.cc/zxsj/blank.gif" data-src="http://icon.dyrs.cc/zxsj/dog.png" class="lazy" />
+					</a>
+				</li>
+				<li>
+					<a href="input.html?type=1&name=panade" class="go_input">
+						<span>昵称</span>
+						<span>panade</span>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<span>所在城市</span>
+						<span>北京</span>
+					</a>
+				</li>
+				<li>
+					<a>
+						<span>房屋地址</span>
+						<span>朝阳区</span>
+					</a>
+				</li>
+				<li>
+					<a href="input.html?type=2&name=民族家园" class="go_input">
+						<span>小区名称</span>
+						<span>民族家园</span>
+					</a>
+				</li>
+				<li>
+					<a href="input.html?type=3&name=100" class="go_input">
+						<span>建筑面积</span>
+						<span>100㎡</span>
+					</a>
+				</li>
+				<li>
+					<a href="绑定手机号.html">
+						<span>未绑定手机号</span>
+						<span>...</span>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<span>已绑定手机号</span>
+						<span>18635128535</span>
+					</a>
+				</li>
+
+			</ul>
+		</div>
+		<script src="js/fastclick.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jQuery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/store.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/m_layz_load.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			window.addEventListener('load', function() {
+				FastClick.attach(document.body);
+			}, false);
+			my.public();
+		</script>
+	</body>
+
+</html>

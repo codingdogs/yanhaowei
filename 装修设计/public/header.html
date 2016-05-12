@@ -1,0 +1,85 @@
+<h3 id="public_title"></h3>
+<em class="public_back icon_h5 active">&#xe603;</em>
+<em id="public_my" class="icon_h5 active need_login">&#xe612;</em>
+<em id='public_menu' class="icon_h5 active">&#xe604;</em>
+<em id='public_address'><a href="选择地址.html">北京<i class="icon_h5">&#xe603;</i></a></em>
+<section class="public_menus change_fixed">
+	<a href="首页.html">
+		<i class="icon_h5">&#xe606;</i><br/> 首页
+	</a>
+	<a href="首页-设计案例.html">
+		<i class="icon_h5">&#xe60d;</i><br/> 设计案例
+	</a>
+	<a href="首页-装修图库.html">
+		<i class="icon_h5">&#xe605;</i><br/> 装修图库
+	</a>
+	<a href="首页-找设计师.html">
+		<i class="icon_h5">&#xe60f;</i><br/> 找设计师
+	</a>
+	<a href="设计中心.html">
+		<i class="icon_h5">&#xe60e;</i><br/> 设计中心
+	</a>
+	<a href="首页-家居产品.html">
+		<i class="icon_h5">&#xe608;</i><br/> 家居产品
+	</a>
+	<a href="装修知识.html">
+		<i class="icon_h5">&#xe607;</i><br/> 装修知识
+	</a>
+	<a href="最新活动.html">
+		<i class="icon_h5">&#xe610;</i><br/> 专题活动
+	</a>
+	<a href="搜索.html">
+		<i class="icon_h5">&#xe60b;</i><br/> 搜索
+	</a>
+	<a href="地板计算.html">
+		<i class="icon_h5">&#xe611;</i><br/> 计算器
+	</a>
+	<span></span>
+</section>
+<div class="public_bg"></div>
+<script type="text/javascript">
+	(function($) {
+		if (my.count) {
+			$('#public_title').html($('title').html() + '<span class="icon_h5">&#xe61c;</i>').click(function() {
+				if ($(this).hasClass('on')) {
+					$(this).removeClass('on');
+					$('div#public_count').hide();
+				} else {
+					$(this).addClass('on');
+					$('div#public_count').show();
+				}
+			})
+		} else {
+			$('#public_title').html($('title').html());
+		}
+		$('.public_back').click(function() {
+			history.go(-1)
+		});
+		$('.public_menus a').each(function(index, obj) {
+			$(obj).css('-webkit-animation-delay', (0.3 + index * 0.1) + 's');
+		})
+		var $menus = $('.public_menus,.public_bg');
+		$('#public_menu').click(function() {
+			if ($(this).hasClass('zhuan')) {
+				$(this).removeClass('zhuan');
+				$menus.hide();
+				$('html,body').removeClass('no_scroll');
+				$('html,body').stop().animate({
+					'scrollTop': my.scroll
+				}, 0);
+			} else {
+				$(this).addClass('zhuan');
+				$menus.show();
+				my.scroll = $(window).scrollTop();
+				$('html,body').addClass('no_scroll');
+			}
+		});
+		$('#public_my').click(function(e) {
+			if (store.get('uid')) {
+				$('#public_per').show();
+			}
+			$('html,body').removeClass('no_scroll');
+			$(window).scroll();
+		})
+	})(jQuery);
+</script>

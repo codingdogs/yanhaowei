@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="renderer" content="webkit">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="email=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<meta name="apple-mobile-web-app-title" content="codewa">
+		<link rel="stylesheet" type="text/css" href="../css/normal.css" />
+		<link rel="apple-touch-icon-precomposed" href="http://7xkwkh.com1.z0.glb.clouddn.com/dog.png" />
+		<link rel="shortcut icon" href="http://7xkwkh.com1.z0.glb.clouddn.com/dog.ico" />
+		<title>codewa</title>
+	</head>
+<!--https://developer.jwplayer.com/jw-player/docs/developer-guide/api/javascript_api_reference/-->
+	<body>
+		<style type="text/css">
+			div#myDiv{
+				width: 100%;
+				height: 500px;
+			}
+		</style>
+		<div id='myDiv'>等待中</div>
+		<script src="jwplayer.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		jwplayer.key="tjyazoWHEM+MlEjIwb6xiRB3SzADh0pi081lgQ==";
+			jwplayer("myDiv").setup({
+				"file": "http://7xkwkh.com1.z0.glb.clouddn.com/04-08-%E5%AE%9A%E4%BD%8D%20-%20geolocationError%20%E3%80%8A%20PhoneGap%20%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80%20%E3%80%8B%20-%20%E5%AE%81%E7%9A%93%E7%BD%91.mp4",
+				"image": "http://7xkwkh.com1.z0.glb.clouddn.com/bg.jpg",
+				'width':'100%',
+				'aspectratio':"16:9",//比例参数
+				'autostart':false,
+				'mute':false,//静音
+				'repeat':true,//循环
+				'abouttext':'yanhaowei',//右击文字
+				'aboutlink':'http://baidu.com',//右击文字链接
+				/*logo:{
+					file:'http://7xkwkh.com1.z0.glb.clouddn.com/code.png',
+					link:'http://baidu.com',
+					margin:20,
+					position:"top-right",
+					width:20,//不起作用
+					height:20//不起作用
+				},*/
+				playlist:[{
+					image:'http://7xkwkh.com1.z0.glb.clouddn.com/plugins12.png',
+					"file": "http://7xkwkh.com1.z0.glb.clouddn.com/04-08-%E5%AE%9A%E4%BD%8D%20-%20geolocationError%20%E3%80%8A%20PhoneGap%20%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80%20%E3%80%8B%20-%20%E5%AE%81%E7%9A%93%E7%BD%91.mp4",
+					title:'test1',
+					description:'miaoshu',
+					sources:[{
+						"file": "http://7xkwkh.com1.z0.glb.clouddn.com/04-08-%E5%AE%9A%E4%BD%8D%20-%20geolocationError%20%E3%80%8A%20PhoneGap%20%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80%20%E3%80%8B%20-%20%E5%AE%81%E7%9A%93%E7%BD%91.mp4",
+						label:'720p',
+						"default":''
+					}]
+				},{
+					image:'http://7xkwkh.com1.z0.glb.clouddn.com/plugins13.png',
+					"file": "http://7xkwkh.com1.z0.glb.clouddn.com/04-08-%E5%AE%9A%E4%BD%8D%20-%20geolocationError%20%E3%80%8A%20PhoneGap%20%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80%20%E3%80%8B%20-%20%E5%AE%81%E7%9A%93%E7%BD%91.mp4",
+					title:'test2',
+					description:'miaoshu'
+				}],
+				displaytitle:true,//是否显示标题
+				displaydescription:true,//是否显示标题
+				listbar:{
+					position:'right',
+					size:200
+				}
+			});
+		</script>
+	</body>
+
+</html>

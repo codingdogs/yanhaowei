@@ -1,0 +1,171 @@
+@import 'public';
+section.href_list {
+    a {
+        display: block;
+        width: 100%;
+        height: 3.4rem;
+        margin-top: 0.25rem;
+        overflow: hidden;
+        position: relative;
+        &:last-of-type {
+            margin-bottom: 0.25rem;
+        }
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    a.new{
+        &:after{
+            content:'NEW';
+            background-color: #ffa801;
+            text-align: center;
+            height: 20px;
+            color: #fff;
+            line-height: 20px;
+            font-size: 12px;
+            width: 80px;
+            margin-right:-40px;
+            display: block;
+            padding-top:12px;
+            @include transform(0,0,1,45deg);
+            transform-origin: center top;
+            position: absolute;
+            right:0;
+            top:0;
+        }
+    }
+}
+section.active_shape {
+    div.content {
+        width: 7.5rem;
+        overflow: hidden;
+        a {
+            float: left;
+            width: 3.4rem;
+            margin-right: 0.2rem;
+            margin-bottom: 7px;
+            overflow: hidden;
+            img {
+                display: block;
+                width: 100%;
+                height: 2.1rem;
+            }
+            span {
+                display: block;
+                @extend .ellipsis;
+                color: #666;
+                font-size: 13px;
+                height: 22px;
+                line-height: 22px;
+            }
+        }
+    }
+}
+section.active_info_title {
+    padding: 13px 0;
+    border-bottom: 1px solid $color_border;
+    h2 {
+        text-align: center;
+        font-size: 15px;
+        color: #000;
+        margin-bottom: 5px;
+    }
+    span {
+        display: block;
+        text-align: center;
+        font-size: 12px;
+        color: $color_content;
+    }
+}
+section.active_info_content {
+    color: $color_content;
+    font-size: 12px;
+    padding: 0.25rem 0;
+    span {
+        display: block;
+        overflow: hidden;
+        margin-bottom: 5px;
+        em {
+            float: left;
+            color: #2c2c2c;
+        }
+        i {
+            float: left;
+            padding-left: 5px;
+        }
+        &:last-of-type {
+            i {
+                color: $color_logo;
+            }
+        }
+    }
+    p,
+    img {
+        display: block;
+        margin-top: 7px;
+        width: 100%;
+    }
+    p {
+        text-indent: 2em;
+    }
+}
+div.active_form {
+    padding: 0.25rem;
+    input {
+        background-color: transparent;
+        border: 1px solid $color_border;
+        font-size: 16px;
+        padding: 10px;
+        display: block;
+        width: 100%;
+        margin-bottom: 0.25rem;
+    }
+    div.input {
+        @extend .box;
+        @extend .select_no;
+        div {
+            display: block;
+            overflow: hidden;
+        }
+        input {
+            @include box-flex(1.0)
+        }
+        img {
+            height: 23px;
+            float: left;
+            margin: 7px;
+            width: 62px;
+        }
+        i {
+            float: left;
+            margin: 7px;
+            cursor: pointer;
+        }
+    }
+    input#btn{
+        color: #fff;
+        text-align: center;
+        border:none;
+        background-color: $color_logo;
+        @extend .active;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

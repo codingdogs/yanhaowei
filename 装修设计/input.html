@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="renderer" content="webkit">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="email=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<script src="js/change_view.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			change.action(750);
+		</script>
+		<meta name="apple-mobile-web-app-title" content="装修设计">
+		<link rel="stylesheet" type="text/css" href="css/normal.css" />
+		<link rel="apple-touch-icon-precomposed" href="http://icon.dyrs.cc/zxsj/zhuangxiusheji.png" />
+		<link rel="shortcut icon" href="http://icon.dyrs.cc/zxsj/zhuangxiusheji.ico" />
+		<title>修改资料</title>
+	</head>
+	<style type="text/css">
+		form {
+			padding: 0.25rem;
+		}
+		form div{
+			position: relative;
+			display: block;
+		}
+		form div i{
+			width: 30px;
+			text-align: center;
+			position: absolute;
+			right:2px;
+			display: none;
+			top:50%;
+			line-height: 1;
+			color: #666;
+			margin-top:-9px;
+			font-size: 12px;
+			padding:3px;
+			background-color: #fff;
+		}
+		input {
+			width: 100%;
+			padding: 10px;
+			border: 1px solid #e9e9e9;
+			font-size: 13px;
+		}
+		
+		button {
+			display: block;
+			width: 80%;
+			margin: 20px auto;
+			height: 40px;
+			text-align: center;
+			line-height: 40px;
+			color: #fff;
+			background-color: #ff4049;
+			border-radius: 3px;
+		}
+	</style>
+
+	<body>
+		<form>
+			<div>
+				<input type="text" class="input" placeholder="" />
+				<i>㎡</i>
+			</div>
+
+			<button>确定</button>
+		</form>
+
+		<script src="js/fastclick.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jQuery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/*
+													type值示意
+													1: 普通text；
+													2： 为数字
+													3： 为tel
+													4： 为email
+													5： 为电话
+													6： 电话或者email
+													*/
+			var type = [{
+				title: '修改资料',
+				place: ''
+			}, {
+				title: '修改昵称',
+				place: '昵称'
+			}, {
+				title: '修改小区名称',
+				place: '小区名称'
+			}, {
+				title: "修改建筑面积",
+				place: '面积'
+			}];
+			var now_type = my.url_attr('type') ? my.url_attr('type') : 0;
+			var now_name = my.url_attr_cn('name') ? my.url_attr_cn('name') : '';
+			if (now_type > 0) {
+				document.title = type[now_type].title;
+			}
+		</script>
+		<script src="js/store.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/m_layz_load.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			window.addEventListener('load', function() {
+				FastClick.attach(document.body);
+			}, false);
+			my.public();
+			var $input = $('.input');
+			if (now_type == 3) {
+				$input.attr('type', 'number');
+				$input.next().show();
+			}
+			$input.attr('placeholder', type[now_type].place).val(now_name)
+			$('form').submit(function(e) {
+				e.preventDefault();
+				if ($.trim($input.val()) == '') {
+					my.toast('请填写内容！');
+					return false;
+				}
+				my.show_loading();
+				var tt = setTimeout(function() {
+					my.close_loading();
+					my.tips('ok', '修改成功！', function() {
+						history.go(-1)
+					})
+				}, 1000);
+			});
+		</script>
+	</body>
+
+</html>
