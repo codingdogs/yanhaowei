@@ -51,7 +51,7 @@ var tost_tt;
 var my = {
 	count: 0,
 	uid: '',
-	title_h:40,
+	title_h: 40,
 	scroll: 0,
 	system: 'ios',
 	url_attr: function(name) {
@@ -171,7 +171,21 @@ var my = {
 	hide_loading: function() {
 		$('#ajax_loading').hide();
 	},
-	public: function(obj) {
+	view_no_scroll: function() {
+		my.scroll = $(window).scrollTop();
+		$('html,body').addClass('no_scroll');
+	},
+	view_scroll: function() {
+		$('html,body').removeClass('no_scroll');
+		$(window).scrollTop(my.scroll)
+		my.scroll = 0;
+	},
+	public: function(path, type) {
+		if (type == 1) {
+			$('<section id="public_header" class="index">').prependTo('body').load(path + 'header.html', function() {
+				//				alert(1)
+			});
+		}
 		//添加loading模块/S
 		$("<section id='ajax_loading'><div><i></i></div></section>").appendTo('body');
 		document.getElementById("ajax_loading").addEventListener('touchmove', function(e) {
@@ -191,23 +205,21 @@ var my = {
 				$go_top.hide();
 			}
 		});
-		$('body').on('click', '.need_login', function(e) {
-			if (!store.get('uid')) {
-				if (my.need_login_flag) {
+		$('body').on('click', '.need_search', function() {
+				if (!my.search) {
 					my.show_loading();
-					my.need_login_flag = false;
-					$('<section id="login" class="change_fixed"></section>').load('public/login.html', function() {
-						my.close_loading();
-						$(window).scroll();
-					}).appendTo('body');
-				};
-				$('section#login').show();
-				my.scroll = $(window).scrollTop();
-				$('html,body').addClass('no_scroll');
-				e.preventDefault();
-			};
-		});
-		//警告框
+					$('<section id="public_search">').prependTo('body').load(path + 'search.html', function() {
+						my.search = true;
+						my.hide_loading();
+						$('#public_search').show();
+						my.view_no_scroll();
+					});
+				} else {
+					$('#public_search').show();
+					my.view_no_scroll();
+				}
+			})
+			//警告框
 		$('<section id="warn" class="change_fixed"><span><i class=" icon"></i><em></em></span></section>').appendTo('body');
 		document.getElementById("warn").addEventListener('touchmove', function(e) {
 			e.preventDefault();
@@ -218,7 +230,7 @@ var my = {
 		var start_top = $obj.offset().top;
 		$(window).scroll(function() {
 			var $win = $(window);
-			if ($win.scrollTop() > start_top-my.title_h) {
+			if ($win.scrollTop() > start_top - my.title_h) {
 				$obj.css(css2);
 			} else {
 				$obj.css(css1);

@@ -24,8 +24,6 @@
 	</head>
 
 	<body>
-		<section id="public_header" class="index">
-		</section>
 		<section id="content">
 			<!--轮播/s-->
 			<div class="swiper-container bg_f">
@@ -293,8 +291,7 @@
 				FastClick.attach(document.body);
 			}, false);
 			$(function() {
-				my.public();
-				$('#public_header').load('public/header.html');
+				my.public('public/', 1);
 				//轮播
 				var mySwiper = new Swiper('.swiper-container', {
 					autoplay: 5000, //可选选项，自动滑动
@@ -341,7 +338,7 @@
 				var $shape_lists = $('.shape_tabs ul.title li');
 				var $shape_tabs_contents = $('.shape_tabs section.contents');
 				var now_index = 0;
-				var scroll_top = $('.shape_tabs ul.title').offset().top-my.title_h;
+				var scroll_top = $('.shape_tabs ul.title').offset().top - my.title_h;
 				$shape_lists.each(function(index, obj) {
 					this.index = index;
 					$(obj).click(function() {
@@ -378,9 +375,8 @@
 					top: my.title_h,
 					position: 'fixed'
 				});
-				my.page('.ing',function(){
-					
-					$('[data-tap='+now_index+']').prepend(template('module', data));
+				my.page('.ing', function() {
+					$('[data-tap=' + now_index + ']').prepend(template('module', data));
 				})
 			})
 		</script>
