@@ -180,14 +180,19 @@ var my = {
 		my.scroll = 0;
 	},
 	public: function(path, type) {
-		//1:首页2：搜索结果页面
+		//1:首页2：搜索结果页面3:search右边没有4:返回 标题 购物车
 		if (type == 1) {
 			var now_class="index";
 		} else if(type == 2) {
 			var now_class="search";
 		}else if(type==3){
-			var now_class='search1'
+			var now_class='search1';
+		}else if(type==4){
+			var now_class='info';
+		}else if(type==5){
+			var now_class='normal'
 		}
+		
 		$('<section id="public_header" class='+now_class+'>').prependTo('body').load(path + 'header.html', function() {
 			//				alert(1)
 		});

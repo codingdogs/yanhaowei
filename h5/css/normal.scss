@@ -172,6 +172,9 @@ input[type="number"] {
 .lazy {
     background: url('http://7xkwkh.com1.z0.glb.clouddn.com/code.png') no-repeat center center;
     background-size: 20% auto;
+    background-color: #ccc;
+    position: relative;
+    overflow: hidden;
 }
 img.go_opacity {
     animation: fadeIn 0.5s forwards alternate;
@@ -185,7 +188,7 @@ img.go_opacity {
 }
 @font-face {
     font-family: 'icon';
-    src: url('//at.alicdn.com/t/font_1463063145_6449213.ttf') format('truetype');
+    src: url('//at.alicdn.com/t/font_1463188728_2577536.ttf') format('truetype');
     /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
 }
 .icon {
@@ -485,6 +488,12 @@ section#warn {
     }
 }
 //warning/e
+.icon-right:before {
+    content: "\e611";
+}
+.icon-left:before {
+    content: "\e612";
+}
 .icon-xiaoxi:before {
     content: "\e601";
 }
@@ -529,6 +538,12 @@ section#warn {
 }
 .icon-shopcar:before {
     content: "\e60e";
+}
+.icon-shaidan:before {
+    content: "\e610";
+}
+.icon-share:before {
+    content: "\e60f";
 }
 //login=====e
 //公共部分样式/s
@@ -589,7 +604,7 @@ section#public_header {
         width: 100%;
         overflow: hidden;
         height: 100%;
-        div{
+        div {
             background-color: #fff;
             height: 30px;
             border-radius: 2px;
@@ -597,16 +612,16 @@ section#public_header {
             line-height: 30px;
             position: relative;
             width: 100%;
-            em.icon{
+            em.icon {
                 display: block!important;
                 color: #b3b3b3;
                 display: block;
                 height: 100%;
-                padding:0 10px;
+                padding: 0 10px;
             }
-            input{
-               display: block; 
-               padding-right:10px;
+            input {
+                display: block;
+                padding-right: 10px;
             }
         }
     }
@@ -627,16 +642,27 @@ section.search {
         display: block!important;
     }
 }
-section.search1{
-    h3{
+section.search1 {
+    h3 {
         display: none!important;
     }
     i.icon-back,
     form.public_form_search {
         display: block!important;
     }
-    form.public_form_search{
-        padding-right:10px!important;
+    form.public_form_search {
+        padding-right: 10px !important;
+    }
+}
+section.info {
+    i.icon-back,
+    i.icon-shopcar {
+        display: block!important;
+    }
+}
+section.normal {
+    i.icon-back {
+        display: block!important;
     }
 }
 body {
@@ -814,29 +840,94 @@ section#public_search {
     -webkit-transform: scale(0.8);
     transform: scale(0.8);
 }
+*[data-leftBar]:before {
+    content: attr(data-leftBar);
+    background-color: #9c84cb;
+    font-size: 12px;
+    text-align: center;
+    width: 25px;
+    position: absolute;
+    left: 6px;
+    z-index: 3;
+    top: 0;
+    color: #fff;
+    padding: 3px;
+    -webkit-transform-origin: top center;
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    transform: scale(0.8);
+}
 section.h_title {
-        height: 45px;
-        line-height: 45px;
-        background-color: #fff;
-        h3 {
-            font-size: 15px;
-            color: #333;
+    height: 45px;
+    line-height: 45px;
+    background-color: #fff;
+    h3 {
+        font-size: 15px;
+        color: #333;
+    }
+    a {
+        color: #808080;
+        font-size: 12px;
+        i {
+            display: inline-block;
+            margin-left: 8px;
         }
+    }
+}
+.m_top {
+    margin-top: 10px;
+}
+.m_bot {
+    margin-bottom: 10px;
+}
+ul.href_list_bar {
+    li {
+        border-bottom: 1px solid #ccc;
+        overflow: hidden;
+        position: relative;
+        background-color: #fff;
         a {
-            color: #808080;
-            font-size: 12px;
+            height: 45px;
+            line-height: 45px;
+            color: #333;
+            font-size: 15px;
+            padding: 0 12px;
             i {
-                display: inline-block;
-                margin-left: 8px;
+                display: block;
+                margin-right: 12px;
+                font-size: 20px;
+            }
+            &:after {
+                @extend .icon;
+                content: '\e611';
+                display: block;
+                margin-left: 9px;
+                color: #808080;
+            }
+            span {
+                height: 100%;
+                display: block;
+                font-size: 12px;
+                color: #808080;
             }
         }
     }
-    .m_top{
-        margin-top:10px;
-    }
-    .m_bot{
-        margin-bottom:10px;
-    }
+}
+.box {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+.flex1 {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    box-flex: 1;
+    flex: 1;
+    overflow: hidden;
+}
 //有上脚小圆点/e
 //公共部分样式/e
 //

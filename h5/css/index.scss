@@ -202,20 +202,6 @@ section.shape_tabs {
     }
     ul.content {
         overflow: hidden;
-        li[data-section]:after {
-            content: attr(data-section);
-            background-color: #9c84cb;
-            font-size: 12px;
-            text-align: center;
-            width: 25px;
-            position: absolute;
-            left: 6px;
-            z-index: 3;
-            top: 0;
-            color: #fff;
-            -webkit-transform-origin: top center;
-            @include transform(scale(0.8));
-        }
         li {
             position: relative;
             a {

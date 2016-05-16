@@ -21,23 +21,6 @@ ul.search_end_content {
         overflow: hidden;
         display: block;
         position: relative;
-        &[data-left-bar]:before {
-            content: attr(data-left-bar);
-            background-color: #9c84cb;
-            font-size: 12px;
-            text-align: center;
-            width: 25px;
-            position: absolute;
-            left: 6px;
-            z-index: 3;
-            top: 0;
-            color: #fff;
-            -webkit-transform-origin: top center;
-            -webkit-transform: scale(0.8);
-            -ms-transform: scale(0.8);
-            -o-transform: scale(0.8);
-            transform: scale(0.8);
-        }
         a {
             overflow: hidden;
             padding: 15px;

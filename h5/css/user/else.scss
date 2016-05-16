@@ -1,0 +1,29 @@
+@import '../public';
+section.people {
+    height: 75px;
+    background-color: #fff;
+    padding: 15px 20px;
+    overflow: hidden;
+    position: relative;
+    div.lazy {
+        width: 45px;
+        height: 45px;
+        -webkit-transform: rotateZ(0);
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 15px;
+        display: block;
+    }
+    div.right {
+        span {
+            display: block;
+            width: 100%;
+            font-size: 15px;
+            margin-bottom:6px;
+            &:last-of-type{
+                color: #808080;
+                font-size: 14px;
+            }
+        }
+    }
+}

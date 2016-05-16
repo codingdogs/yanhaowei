@@ -20,25 +20,26 @@
 		<link rel="shortcut icon" href="http://7xkwkh.com1.z0.glb.clouddn.com/dog.ico" />
 		<title>module</title>
 	</head>
-		<style type="text/css">
-			ul.lists li{
-				display: block;
-				padding:10px 0;
-				text-align: center;
-				margin:5px 0;
-				background-color: #ccc;
-				font-size: 14px;
-				cursor: pointer;
-			}
-			body{
-				padding-bottom:1000px;
-			}
-			input{
-				-webkit-appearance: none;
-				
-			}
-		</style>
+	<style type="text/css">
+		ul.lists li {
+			display: block;
+			padding: 10px 0;
+			text-align: center;
+			margin: 5px 0;
+			background-color: #ccc;
+			font-size: 14px;
+			cursor: pointer;
+		}
 		
+		body {
+			padding-bottom: 1000px;
+		}
+		
+		input {
+			-webkit-appearance: none;
+		}
+	</style>
+
 	<body>
 		<ul class="lists">
 			<li>loading</li>
@@ -55,6 +56,16 @@
 		<form action="">
 			<input type="search" name="search" id="search" value="" placeholder="搜索感兴趣的宝物" class="flex1" autocomplete='off' />
 		</form>
+		<section class=" box pd border_b h_title">
+			<h3 class="flex1">最新揭晓</h3>
+			<a href="">全部<i class="icon icon-jiantou"></i></a>
+		</section>
+		<section class="box">
+			<img src="../img/ten2@3x.png" />
+			<div class="flex1">
+				<span class="ellipsis">asdfjadkfjakdsjfkjasdkfj</span>
+			</div>
+		</section>
 		<script src="../js/fastclick.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/jQuery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/m_layz_load.js" type="text/javascript" charset="utf-8"></script>
@@ -64,24 +75,24 @@
 				FastClick.attach(document.body);
 			}, false);
 			my.public();
-			var $lists=$('ul.lists li');
-			$lists.eq(0).click(function(){
+			var $lists = $('ul.lists li');
+			$lists.eq(0).click(function() {
 				my.show_loading();
-				var tt=setTimeout(function(){
+				var tt = setTimeout(function() {
 					my.hide_loading();
-				},2000);
+				}, 2000);
 			})
-			$lists.eq(1).click(function(){
+			$lists.eq(1).click(function() {
 				my.toast('我是toast')
 			})
-			$lists.eq(2).click(function(){
-				my.tips('warning','warging')
+			$lists.eq(2).click(function() {
+				my.tips('warning', 'warging')
 			})
-			$lists.eq(3).click(function(){
-				my.tips('correct','correct')
+			$lists.eq(3).click(function() {
+				my.tips('correct', 'correct')
 			})
-			$lists.eq(4).click(function(){
-				my.tips('wrong','wrongwrongwrongwrongwrongwrongwrongwrongwrongwrongwrongwrong',function(){
+			$lists.eq(4).click(function() {
+				my.tips('wrong', 'wrongwrongwrongwrongwrongwrongwrongwrongwrongwrongwrongwrong', function() {
 					alert(1)
 				})
 			})
