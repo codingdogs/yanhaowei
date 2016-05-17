@@ -188,7 +188,7 @@ img.go_opacity {
 }
 @font-face {
     font-family: 'icon';
-    src: url('//at.alicdn.com/t/font_1463188728_2577536.ttf') format('truetype');
+    src: url('//at.alicdn.com/t/font_1463501027_2897637.ttf') format('truetype');
     /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
 }
 .icon {
@@ -488,6 +488,27 @@ section#warn {
     }
 }
 //warning/e
+.icon-close:before {
+    content: "\e618";
+}
+.icon-biaoqian:before {
+    content: "\e619";
+}
+.icon-weixin:before {
+    content: "\e616";
+}
+.icon-qq:before {
+    content: "\e615";
+}
+.icon-weibo:before {
+    content: "\e617";
+}
+.icon-phone:before {
+    content: "\e614";
+}
+.icon-pwd:before {
+    content: "\e613";
+}
 .icon-right:before {
     content: "\e611";
 }
@@ -927,6 +948,38 @@ ul.href_list_bar {
     box-flex: 1;
     flex: 1;
     overflow: hidden;
+}
+section.meun_footer {
+    overflow: hidden;
+    background-color: #f2f2f2;
+    position: fixed;
+    z-index: 30;
+    bottom: 0;
+    a {
+        padding: 7px;
+        color: #808080;
+        text-align: center;
+        display: block;
+        @extend .ellipsis;
+        i.icon {
+            font-size: 20px;
+            display: inline-block;
+            position: relative;
+        }
+        span {
+            text-align: center;
+            font-size: 12px;
+            margin-top: 5px;
+            display: block;
+            width: 100%;
+        }
+    }
+    a.on {
+        color: #f05455;
+    }
+}
+body.has_meun{
+    padding-bottom:60px;
 }
 //有上脚小圆点/e
 //公共部分样式/e

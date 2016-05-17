@@ -19,7 +19,7 @@
 		<link rel="stylesheet" type="text/css" href="../../css/login/logins.css" />
 		<link rel="apple-touch-icon-precomposed" href="http://7xkwkh.com1.z0.glb.clouddn.com/dog.png" />
 		<link rel="shortcut icon" href="http://7xkwkh.com1.z0.glb.clouddn.com/dog.ico" />
-		<title>登录</title>
+		<title>注册</title>
 	</head>
 
 	<body class="login">
@@ -33,21 +33,28 @@
 					</section>
 				</div>
 				<div class="input box">
+					<i class="icon icon-biaoqian"></i>
+					<section class="input_close flex1">
+						<input type="number" name="code" id="code" value="" placeholder="请输入验证码" />
+						<em class="icon icon-close"></em>
+					</section>
+					<span class="has_code select_no">获取验证码</span>
+				</div>
+				<div class="input box">
 					<i class="icon icon-pwd"></i>
 					<section class="input_close flex1">
 						<input type="password" name="pwd" id="pwd" value="" placeholder="请输入密码" />
 						<em class="icon icon-close"></em>
 					</section>
-					<a href="">忘记密码？</a>
 				</div>
 				<section class="footer">
-					<button class="btns">登录</button>
-					<a href="register.html" class="btns">注册</a>
+					<button class="btns">注册</button>
+					<a href="login.html" class="btns">登录</a>
 				</section>
 			</form>
 			<section class="login_else">
 				<h3>
-					<span>或从以下方式登录</span>
+					<span>或从以下方式快速注册</span>
 				</h3>
 				<div>
 					<a href="">
@@ -77,16 +84,56 @@
 			$(function() {
 				my.public('../public/', 5);
 			});
+			var code_num = 60;
 			var $user = $('#user');
+			var $code = $('#code');
 			var $pwd = $('#pwd');
+			var $has_code = $('span.has_code');
+			$has_code.click(function(e) {
+				var go_json = {
+					name: $.trim($user.val())
+				}
+				if (go_json.name == '') {
+					my.toast('账号不能为空！');
+				} else if (!my.email.test(go_json.name) && !my.tel_test.test(go_json.name)) {
+					my.toast('账号格式不正确!')
+				} else {
+					if ($(this).hasClass('on')) {
+						return false;
+					} else {
+						$(this).addClass('on');
+					}
+					my.show_loading();
+					if (go_json.name == '18688888888') {
+						my.hide_loading();
+						my.tips('correct', '发送成功');
+						$has_code.html(code_num + 's').addClass('hui');
+						var tt = setInterval(function() {
+							code_num--;
+							if (code_num <= 0) {
+								$has_code.html('获取验证码').removeClass('on');
+								code_num = 60;
+								clearInterval(tt);
+								return false;
+							}
+							$has_code.html(code_num + 's')
+						}, 1000)
+					} else {
+						alert(18688888888)
+					}
+				}
+			});
 			$('.login_form').submit(function(e) {
 				e.preventDefault();
 				var go_json = {
 					name: $.trim($user.val()),
-					pas: $pwd.val()
+					pas: $pwd.val(),
+					code: $.trim($code.val())
 				}
 				if (go_json.name == '') {
 					my.toast('账号不能为空！');
+				} else if (go_json.code == '') {
+					my.toast('验证码不能为空！');
 				} else if (go_json.pas == '') {
 					my.toast('密码不能为空！');
 				} else if (!my.email.test(go_json.name) && !my.tel_test.test(go_json.name)) {

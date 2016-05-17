@@ -55,14 +55,15 @@ var my = {
 	scroll: 0,
 	system: 'ios',
 	url_attr: function(name) {
-		var LocString=String(window.document.location.href); 
-		var rs = new RegExp("(^|)"+name+"=([^/&]*)(/&|$)","gi").exec(LocString), tmp;   
-       
-        if(tmp=rs){   
-            return decodeURI(tmp[2]);   
-        }   
-        // parameter cannot be found   
-        return "";   
+		var LocString = String(window.document.location.href);
+		var rs = new RegExp("(^|)" + name + "=([^/&]*)(/&|$)", "gi").exec(LocString),
+			tmp;
+
+		if (tmp = rs) {
+			return decodeURI(tmp[2]);
+		}
+		// parameter cannot be found   
+		return "";
 	},
 	tips: function(obj1, obj2, fn) {
 		var $warn = $('#warn')
@@ -182,18 +183,31 @@ var my = {
 	public: function(path, type) {
 		//1:首页2：搜索结果页面3:search右边没有4:返回 标题 购物车
 		if (type == 1) {
-			var now_class="index";
-		} else if(type == 2) {
-			var now_class="search";
-		}else if(type==3){
-			var now_class='search1';
-		}else if(type==4){
-			var now_class='info';
-		}else if(type==5){
-			var now_class='normal'
+			var now_class = "index";
+		} else if (type == 2) {
+			var now_class = "search";
+		} else if (type == 3) {
+			var now_class = 'search1';
+		} else if (type == 4) {
+			var now_class = 'info';
+		} else if (type == 5) {
+			var now_class = 'normal'
+		};
+		if ($('body').has('has_meun')) {
+			$('<section class="meun_footer box border_t change_fixed">').prependTo('body').load(path + 'meun.html', function() {
+				$('.meun_footer a').removeClass('on').eq($('body').attr('data-meun')).addClass('on');
+			});
 		}
-		
-		$('<section id="public_header" class='+now_class+'>').prependTo('body').load(path + 'header.html', function() {
+		$('body').on('input', 'input', function(e) {
+			if ($(this).parent().has('input_close')) {
+				$(this).next('em').show()
+			}
+		}).on('click', 'em.icon-close', function(e) {
+			if ($(this).parent().has('input_close')) {
+				$(this).hide().prev('input').val('');
+			}
+		});
+		$('<section id="public_header" class=' + now_class + '>').prependTo('body').load(path + 'header.html', function() {
 			//				alert(1)
 		});
 		//添加loading模块/S
@@ -223,7 +237,7 @@ var my = {
 						my.hide_loading();
 						$('#public_search').show();
 						my.view_no_scroll();
-						$('.form_search').attr('action',path+'../search/')
+						$('.form_search').attr('action', path + '../search/')
 					});
 				} else {
 					$('#public_search').show();

@@ -10,20 +10,20 @@
 		<meta name="format-detection" content="telephone=no" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta http-equiv="Cache-Control" content="no-siteapp" />
-		<script src="../js/change_view.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/change_view.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			change.action(640);
 		</script>
 		<meta name="apple-mobile-web-app-title" content="codewa">
-		<link rel="stylesheet" type="text/css" href="../css/normal.css" />
-		<link rel="stylesheet" type="text/css" href="../css/index.css" />
-		<link rel="stylesheet" type="text/css" href="../css/swiper.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/normal.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/index.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/swiper.min.css" />
 		<link rel="apple-touch-icon-precomposed" href="http://7xkwkh.com1.z0.glb.clouddn.com/dog.png" />
 		<link rel="shortcut icon" href="http://7xkwkh.com1.z0.glb.clouddn.com/dog.ico" />
 		<title>一元竞宝</title>
 	</head>
 
-	<body>
+	<body class="has_meun" data-meun='0'>
 		<section id="content">
 			<!--轮播/s-->
 			<div class="swiper-container bg_f">
@@ -239,28 +239,6 @@
 			</section>
 		</section>
 		<span class="ing">正在加载^_^</span>
-		<section class="meun_footer box border_t change_fixed">
-			<a href="" class="flex1 on">
-				<i class="icon icon-top"></i>
-				<span class="ellipsis">夺宝</span>
-			</a>
-			<a href="" class="flex1">
-				<i class="icon icon-top"></i>
-				<span class="ellipsis">最新揭晓</span>
-			</a>
-			<a href="" class="flex1">
-				<i class="icon icon-top"></i>
-				<span class="ellipsis">晒单</span>
-			</a>
-			<a href="" class="flex1">
-				<i class="icon icon-top" data-rightBar='2'></i>
-				<span class="ellipsis">清单</span>
-			</a>
-			<a href="" class="flex1">
-				<i class="icon icon-top"></i>
-				<span class="ellipsis">我</span>
-			</a>
-		</section>
 		<script type="text/html" id='module'>
 			{{each data as value i}}
 			<li>
@@ -280,18 +258,18 @@
 			</li>
 			{{/each}}
 		</script>
-		<script src="../js/fastclick.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../js/jQuery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../js/swiper-3.3.1.jquery.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../js/m_layz_load.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../js/store.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../js/template.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/fastclick.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/jQuery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/swiper-3.3.1.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/m_layz_load.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/store.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/template.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			window.addEventListener('load', function() {
 				FastClick.attach(document.body);
 			}, false);
 			$(function() {
-				my.public('public/', 1);
+				my.public('../public/', 1);
 				//轮播
 				var mySwiper = new Swiper('.swiper-container', {
 					autoplay: 5000, //可选选项，自动滑动
