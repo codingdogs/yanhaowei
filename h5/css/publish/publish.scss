@@ -1,0 +1,84 @@
+@import '../public';
+ul.publish{
+    overflow: hidden;
+    background-color: #fff;
+    li{
+        width: 50%;
+        float: left;
+        overflow: hidden;
+        border-right: 1px solid $color_content;
+        border-bottom: 1px solid $color_content;
+        padding:10px;
+        position: relative;
+        &:nth-of-type(even){
+            border-right:none;
+        }
+        div.lazy{
+            display: block;
+            width: 2rem;
+            height: 2rem;
+            margin: 15px auto;
+            margin-top:0;
+        }
+        section.bottom{
+            color: $color_content;
+            overflow: hidden;
+            height: 130px;
+            p{
+                @include line_over(2);
+                font-size: 14px;
+                color: $color_title;
+                margin-bottom:6px;
+                line-height: 1.3em;
+                height: 37px;
+            }
+            section.spans{
+                font-size: 12px;
+                span{
+                    display: block;
+                    @extend .ellipsis;
+                    margin-bottom:4px;
+                    &:nth-of-type(1){
+                        i{
+                            color: $color_title;
+                        }
+                    }
+                     &:nth-of-type(2){
+                        i{
+                            color: #009BFF;
+                        }
+                    }
+                     &:nth-of-type(3){
+                        i{
+                            color: $color_logo;
+                        }
+                    }
+                     &:nth-of-type(4){
+                        i{
+                            color: $color_logo;
+                        }
+                    }
+                    
+                }
+            }
+            section.last{
+                color: $color_logo;
+                padding-top:3px;
+                span{
+                    @extend .ellipsis;
+                    margin:3px 0;
+                    font-size: 12px;
+                    display: block;
+                    i.icon{
+                        display: inline-block;
+                        margin-right: 3px;
+                        font-weight: bold;
+                    }
+                    &:nth-of-type(2){
+                        font-size: 24px;
+                    }
+                }
+            }
+        }
+    }
+}

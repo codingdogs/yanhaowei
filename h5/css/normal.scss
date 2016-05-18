@@ -188,7 +188,7 @@ img.go_opacity {
 }
 @font-face {
     font-family: 'icon';
-    src: url('//at.alicdn.com/t/font_1463501027_2897637.ttf') format('truetype');
+    src: url('//at.alicdn.com/t/font_1463558949_2340782.ttf') format('truetype');
     /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
 }
 .icon {
@@ -491,6 +491,15 @@ section#warn {
 .icon-close:before {
     content: "\e618";
 }
+.icon-shezhi:before {
+    content: "\e61c";
+}
+.icon-time:before {
+    content: "\e61a";
+}
+.icon-ing:before {
+    content: "\e61b";
+}
 .icon-biaoqian:before {
     content: "\e619";
 }
@@ -580,7 +589,7 @@ section#public_header {
     -ms-user-select: none;
     -webkit-user-select: none;
     z-index: 30;
-    i.icon {
+    a.icon {
         position: absolute;
         left: 0;
         top: 0;
@@ -593,12 +602,12 @@ section#public_header {
         display: none;
         cursor: pointer;
     }
-    i.icon-xiaoxi,
-    i.icon-shopcar {
+    a.icon-xiaoxi,
+    a.icon-shopcar {
         left: initial;
         right: 0;
     }
-    i.icon-shopcar {
+    a.icon-shopcar {
         font-size: 26px;
         &:after {
             background-color: #ccc;
@@ -648,8 +657,8 @@ section#public_header {
     }
 }
 section.index {
-    i.icon-meun_search,
-    i.icon-xiaoxi {
+    a.icon-meun_search,
+    a.icon-xiaoxi {
         display: block!important;
     }
 }
@@ -657,8 +666,8 @@ section.search {
     h3 {
         display: none!important;
     }
-    i.icon-shopcar,
-    i.icon-back,
+    a.icon-shopcar,
+    a.icon-back,
     form.public_form_search {
         display: block!important;
     }
@@ -667,7 +676,7 @@ section.search1 {
     h3 {
         display: none!important;
     }
-    i.icon-back,
+    a.icon-back,
     form.public_form_search {
         display: block!important;
     }
@@ -676,14 +685,22 @@ section.search1 {
     }
 }
 section.info {
-    i.icon-back,
-    i.icon-shopcar {
+    a.icon-back,
+    a.icon-shopcar {
         display: block!important;
     }
 }
 section.normal {
-    i.icon-back {
+    a.icon-back {
         display: block!important;
+    }
+    section.only{
+        
+    }
+    section.nono{
+       a.icon,h3{
+           display: none!important;
+       } 
     }
 }
 body {
