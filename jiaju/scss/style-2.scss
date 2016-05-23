@@ -1,0 +1,169 @@
+@import 'mod/color';
+@import 'mod/function';
+$orange: #ffdf31;
+.bg_color1 {
+    background-color: #f7f7f7!important;
+}
+body {
+    color: #333;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+em {
+    font-weight: normal;
+    font-style: normal;
+}
+div.body {
+    background-color: #fff;
+}
+div.shi {
+    div.shape1 {
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+        position: relative;
+        background: url("../images/banner_bg1.jpg") center center;
+        div.bg_black {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: url("../images/black.png");
+            div.content {
+                text-align: center;
+                margin-top: 15px;
+                img.lazy_img{
+                    width: 340px;
+                    height: 208px;
+                    display: block;
+                    margin:0 auto;
+                    margin-bottom:15px;
+                }
+                p {
+                    display: block;
+                    color: #fff;
+                    font-size: 20px;
+                    line-height: 1.5em;
+                }
+                div.btns {
+                    display: block;
+                    font-size: 0;
+                    margin-top: 36px;
+                    a {
+                        display: inline-block;
+                        font-size: 14px;
+                        width: 140px;
+                        height: 35px;
+                        line-height: 35px;
+                        border: 1px solid $red;
+                        overflow: hidden;
+                        color: $red;
+                        margin: 0 15px;
+                        @include tran();
+                        &:hover {
+                            background-color: $red;
+                            color: #fff;
+                        }
+                    }
+                    a.orange {
+                        border-color: $orange;
+                        color: $orange;
+                        &:hover {
+                            background-color: $orange;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    div.shape2 {}
+}
+div.lazy {
+    position: relative;
+    width: 200px;
+    height: 100px;
+    overflow: hidden;
+    background: url("../images/loading.gif") center center no-repeat;
+    background-color: #ccc;
+    -webkit-transform: rotateZ(0);
+    img.lazy_img {
+        position: absolute;
+    }
+}
+// 标题/s
+h3.p_title {
+    text-align: center;
+    font-size: 24px;
+    overflow: hidden;
+    height: 30px;
+    line-height: 30px;
+    width: 1200px;
+    margin: 0 auto;
+    em {
+        display: inline-block;
+        height: 100%;
+        padding: 0 70px;
+        position: relative;
+        i {
+            position: absolute;
+            width: 60px;
+            background: url("../images/bg_icons.png") no-repeat;
+            background-position: 0 -9px;
+            left: 0;
+            top: 11px;
+            height: 9px;
+        }
+        i.p_title_r {
+            left: initial;
+            right: 0;
+            background-position: 0 0;
+        }
+    }
+}
+// 标题/e
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//

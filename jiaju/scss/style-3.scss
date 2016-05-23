@@ -1,0 +1,29 @@
+@import "mod/function";
+@import "mod/color";
+
+//家居包-全包-列表
+.household_turnkey{}
+.household_turnkey .top{height: 110px;background: url(../images/household_list_bg.jpg) no-repeat;font-size: 14px;}
+.household_turnkey .top dl{padding-top: 21px;}
+.household_turnkey .top dt{width: 98px;padding-left: 8px;line-height: 32px;color: #fff;}
+.household_turnkey .top dd p{}
+.household_turnkey .top dd a{display: block; float: left; text-align: center; line-height: 30px;height: 30px;width: 86px;color: #ff4048;border: 1px solid #ff4048;margin: 0 10px 10px 0;}
+.household_turnkey .top .name a{color: #ff4048;border-color:#ececec;background: #ececec;color: $c666;}
+.household_turnkey .top .txt a:hover,.household_turnkey .top .txt a.active,.household_turnkey .top .name a:hover,.household_turnkey .top .name a.active{color: #fff;background: #ff4048;border-color:#ff4048;}
+
+.household_turnkey .cont{width:1200px;overflow: hidden;padding: 40px 0 60px;}
+.household_turnkey .cont ul{width: 1220px;}
+.household_turnkey .cont li{width: 588px;height: 268px;margin: 0 20px 20px 0;border: 1px solid #e4e4e4;background: #f9f9f9;}
+.household_turnkey .cont dl{width: 212px;padding: 0 12px;}
+.household_turnkey .cont dt{line-height: 36px;height: 36px;overflow: hidden;padding-top: 22px;}
+.household_turnkey .cont dt a{color: #444;font-size: 24px;}
+
+
+
+
+
+
+
+
+
+

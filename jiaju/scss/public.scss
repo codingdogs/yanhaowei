@@ -1,0 +1,109 @@
+@import "mod/color";
+@import "mod/function";
+
+//reset
+*{margin: 0;padding: 0;}
+body{font: 12px/1.5 'microsoft yahei';background:$cfff;color:$c666;}
+input,textarea,img{outline:none;}
+ul,li,ol{list-style: none;}
+a{text-decoration: none;-webkit-tap-highlight-color:rgba(255,255,255,0);color:$c666}
+a:hover{color:$red;}
+label{vertical-align: middle;}
+img{display: block;}
+
+//iconfont
+@font-face {
+  font-family: 'iconfont';
+  src: url('http://at.alicdn.com/t/font_1463998236_4816604.eot'); /* IE9*/
+  src: url('http://at.alicdn.com/t/font_1463998236_4816604.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('http://at.alicdn.com/t/font_1463998236_4816604.woff') format('woff'), /* chrome、firefox */
+  url('http://at.alicdn.com/t/font_1463998236_4816604.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('http://at.alicdn.com/t/font_1463998236_4816604.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+                    
+.iconfont {
+  font-family:"iconfont" !important;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-phone:before { content: "\e606"; }
+.icon-qian:before { content: "\e601"; }
+.icon-weixin:before { content: "\e602"; }
+.icon-icon3:before { content: "\e603"; }
+.icon-di:before { content: "\e604"; }
+.icon-down:before { content: "\e607"; }
+.icon-jiaoyifeidi:before { content: "\e605"; }
+.icon-vip:before { content: "\e600"; }
+.icon-right:before { content: "\e608"; }
+
+//clear
+.clearfix:after, .row:after { content: ''; display: block; clear: both; height: 0; visibility: hidden; }
+.clearfix{*zoom:1;}
+
+//position
+.pr{position:relative;}
+.pa{position:absolute;}
+
+//float
+.fl{float:left;}
+.fr{float:right;}
+
+//text
+.text-nowrap{ white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+
+//show hide
+.hide { display: none; }
+.show { display: block; }
+
+//width
+.w1200{width:1200px;margin:0 auto;}
+
+//topbar
+.topbar{
+	height:40px;border-bottom:solid 1px $cddd;background:$cf5f5f5;
+	.line{height:16px;width:1px;background:$cddd;margin:12px 10px 0;}
+	.curcity {
+		line-height:40px;
+	}
+	.citySelect{line-height:40px;}
+}
+
+
+//title
+.title1{
+	text-align:center;
+	.bg1{background:url(../images/title-l.png) no-repeat center left;display:inline-block;padding-left:80px;font-size:24px;color:$c333;}
+	.bg2{background:url(../images/title-r.png) no-repeat center right;display: inline-block;padding-right:80px;}
+	.subTit{color:$c666;margin-top: 10px;}
+}
+
+//btns
+.btn{display: inline-block;height: 34px;line-height: 34px;padding: 0 20px; @include tran()}
+.btn-red{
+	background: $red;color:$cfff;
+	&:hover{background:#ee2730;color:$cfff;}
+	&:active{background:#e9000b !important;color:$cfff!important;}
+	&.btn-line{
+		background:none;color:$red;border:solid 1px $red;
+		&:hover{background:$red;color:$cfff;}
+	}
+}
+
+.btn-yellow{
+	background: $cffc240;color:$cfff;
+	&:hover{background:$cf8a538;color:$cfff;}
+	&.btn-line{
+		background:none;color:$cffc240;border:solid 1px $cffc240;
+		&:hover{background:$cffc240;color:$cfff;}
+	}
+}
+
+
+
+ 
+

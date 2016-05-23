@@ -1,0 +1,5 @@
+@import "mod/function";
+
+div{
+	 @include tran();
+}
