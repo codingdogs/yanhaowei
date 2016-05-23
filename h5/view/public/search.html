@@ -58,7 +58,7 @@
 		$('form.form_search').submit(function(e) {
 			var $search_val = $.trim($search.val());
 			if ($search_val == '') {
-				my.toast('请输入搜索内容！');
+				notie.alert(3, '请输入搜索内容', 2);
 				return false;
 			} else {
 				my.show_loading();

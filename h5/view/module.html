@@ -36,7 +36,7 @@
 		}
 		
 		input {
-			-webkit-appearance: none;
+			/*-webkit-appearance: none;*/
 		}
 	</style>
 
@@ -47,13 +47,14 @@
 			<li>warning</li>
 			<li>correct</li>
 			<li>wrong</li>
-			<li>go_top</li>
+			<li>noties</li>
 		</ul>
 		<p>
 			z-index:<br/>
 			<span>header:30</span><br/>
 		</p>
 		<form action="">
+			<input type="tel" name="" id="" value="" />
 			<input type="search" name="search" id="search" value="" placeholder="搜索感兴趣的宝物" class="flex1" autocomplete='off' />
 		</form>
 		<section class=" box pd border_b h_title">
@@ -66,6 +67,9 @@
 				<span class="ellipsis">asdfjadkfjakdsjfkjasdkfj</span>
 			</div>
 		</section>
+		 <div class="radio">
+		 	<input type="radio" name="" id="" value="" />
+		 </div>
 		<script src="../js/fastclick.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/jQuery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/m_layz_load.js" type="text/javascript" charset="utf-8"></script>
@@ -95,7 +99,10 @@
 				my.tips('wrong', 'wrongwrongwrongwrongwrongwrongwrongwrongwrongwrongwrongwrong', function() {
 					alert(1)
 				})
-			})
+			});
+			$lists.eq(5).click(function() {
+				notie.alert(3, '请输入搜索内容', 2);
+			});
 		</script>
 	</body>
 

@@ -121,6 +121,7 @@ var my = {
 				ajax_fn();
 			}
 		});
+		$win.scroll();
 	},
 	img: function() {
 		template.helper('img', function(obj, num, type) {
@@ -137,7 +138,7 @@ var my = {
 		})
 	},
 	need_login_flag: true,
-	load: ['正在加载中~', '加载已完成！'],
+	load: ['正在加载中^_^', '加载已完成！'],
 	title_choose: function() {
 		$('.left_right span').each(function(index, obj) {
 			this.index = index;
@@ -180,8 +181,8 @@ var my = {
 		$(window).scrollTop(my.scroll)
 		my.scroll = 0;
 	},
-	public: function(path, type, type1) {
-		//1:首页2：搜索结果页面3:search右边没有4:返回 标题 购物车,6:only，只有标题
+	public: function(path, type,type1) {
+		//1:首页2：搜索结果页面3:search右边没有4:返回 标题 购物车5:标题 返回6：只有标题7：个人中心
 		if (type == 1) {
 			var now_class = "index";
 		} else if (type == 2) {
@@ -192,8 +193,10 @@ var my = {
 			var now_class = 'info';
 		} else if (type == 5) {
 			var now_class = 'normal'
-		} else if (type == 6) {
+		}else if (type == 6) {
 			var now_class = 'only'
+		}else if (type == 7) {
+			var now_class = 'nono'
 		};
 		if ($('body').hasClass('has_meun')) {
 			$('<section class="meun_footer box border_t change_fixed">').prependTo('body').load(path + 'meun.html', function() {
@@ -209,12 +212,9 @@ var my = {
 				$(this).hide().prev('input').val('');
 			}
 		});
-		if (type1 != 'empty') {
-
-			$('<section id="public_header" class=' + now_class + '>').prependTo('body').load(path + 'header.html', function() {
-				//				alert(1)
-			});
-		}
+		$('<section id="public_header" class=' + now_class + '>').prependTo('body').load(path + 'header.html', function() {
+			//				alert(1)
+		});
 		//添加loading模块/S
 		$("<section id='ajax_loading'><div><i></i></div></section>").appendTo('body');
 		document.getElementById("ajax_loading").addEventListener('touchmove', function(e) {

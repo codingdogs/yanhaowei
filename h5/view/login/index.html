@@ -80,11 +80,11 @@
 					pas: $pwd.val()
 				}
 				if (go_json.name == '') {
-					my.toast('账号不能为空！');
+					notie.alert(3, '账号不能为空', 2);
 				} else if (go_json.pas == '') {
-					my.toast('密码不能为空！');
+					notie.alert(3, '密码不能为空', 2);
 				} else if (!my.email.test(go_json.name) && !my.tel_test.test(go_json.name)) {
-					my.toast('账号格式不正确!')
+					notie.alert(3, '账号格式不正确', 2);
 				} else {
 					my.show_loading();
 					if (go_json.name == '18688888888') {

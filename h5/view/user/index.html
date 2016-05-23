@@ -16,12 +16,92 @@
 		</script>
 		<meta name="apple-mobile-web-app-title" content="codewa">
 		<link rel="stylesheet" type="text/css" href="../../css/normal.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/user/user.css" />
 		<link rel="apple-touch-icon-precomposed" href="http://7xkwkh.com1.z0.glb.clouddn.com/dog.png" />
 		<link rel="shortcut icon" href="http://7xkwkh.com1.z0.glb.clouddn.com/dog.ico" />
 		<title>个人中心</title>
 	</head>
 
 	<body class="has_meun" data-meun='4'>
+		<section id="content">
+			<section class="user_img">
+				<div class="lazy">
+					<img src="http://icon.dyrs.cc/zxsj/blank.gif" data-ysrc="http://icon.dyrs.cc/zxsj/info_list.jpg" class="auto" />
+				</div>
+				<section class="title">
+					<em>codewa</em>
+				</section>
+				<section class="bottom">
+					<span>余额：<i>200</i>元</span>
+					<a href="">充值</a>
+				</section>
+			</section>
+			<section class="user_content m_top">
+				<section class="title box">
+					<a href="" class="flex1">
+						<i class="icon icon-ing" data-rightbar='12'></i>
+						<span>进行中</span>
+					</a>
+					<a href="" class="flex1">
+						<i class="icon icon-ing"></i>
+						<span>进行中</span>
+					</a>
+				</section>
+				<ul class="href_list_bar">
+					<li>
+						<a href="" class="box">
+							<i class="icon icon-shopcar"></i>
+							<em class="flex1 ellipsis">全部竞宝记录</em>
+						</a>
+					</li>
+					<li>
+						<a href="" class="box">
+							<i class="icon icon-shopcar"></i>
+							<em class="flex1 ellipsis"><i data-rightbar='12'>幸运记录</i></em>
+						</a>
+					</li>
+					<li class="m_top">
+						<a href="" class="box">
+							<i class="icon icon-shopcar"></i>
+							<em class="flex1 ellipsis">我的积分<i class="font_2">(200积分)</em>
+							<span>已签到1天</span>
+						</a>
+					</li>
+					<li>
+						<a href="" class="box">
+							<i class="icon icon-shopcar"></i>
+							<em class="flex1 ellipsis">红包</em>
+						</a>
+					</li>
+					<li>
+						<a href="" class="box">
+							<i class="icon icon-shopcar"></i>
+							<em class="flex1 ellipsis">晒单</em>
+						</a>
+					</li>
+					<li class="m_top">
+						<a href="" class="box">
+							<i class="icon icon-shopcar"></i>
+							<em class="flex1 ellipsis">我的地址</i></em>
+							<span>未完善</span>
+						</a>
+					</li>
+					<li class="m_top">
+						<a href="" class="box">
+							<i class="icon icon-shopcar"></i>
+							<em class="flex1 ellipsis">充值记录</em>
+						</a>
+					</li>
+					<li class="m_top">
+						<a href="" class="box">
+							<i class="icon icon-shopcar"></i>
+							<em class="flex1 ellipsis">客服</em>
+						</a>
+					</li>
+				</ul>
+				<p  class="footer_bottom">所有商品抽奖活动与苹果公司（Apple Inc.）无关</p>
+			</section>
+		</section>
 		<script src="../../js/fastclick.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../../js/jQuery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../../js/m_layz_load.js" type="text/javascript" charset="utf-8"></script>
@@ -32,7 +112,7 @@
 				FastClick.attach(document.body);
 			}, false);
 			$(function() {
-				my.public('../public/', 1);
+				my.public('../public/', 7,'empty');
 			});
 		</script>
 	</body>

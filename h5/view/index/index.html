@@ -137,7 +137,7 @@
 								<div class="button">
 									<div class="left">
 										<em>揭晓进度<i>84%</i></em>
-										<span><i style="width:84% ;"></i></span>
+										<span class="gradient"><i style="width:84% ;"></i></span>
 									</div>
 									<button>加入清单</button>
 								</div>
@@ -152,7 +152,7 @@
 								<div class="button">
 									<div class="left">
 										<em>揭晓进度<i>84%</i></em>
-										<span><i style="width:84% ;"></i></span>
+										<span class="gradient"><i style="width:84% ;"></i></span>
 									</div>
 									<button>加入清单</button>
 								</div>
@@ -167,7 +167,7 @@
 								<div class="button">
 									<div class="left">
 										<em>揭晓进度<i>84%</i></em>
-										<span><i style="width:84% ;"></i></span>
+										<span class="gradient"><i style="width:84% ;"></i></span>
 									</div>
 									<button>加入清单</button>
 								</div>
@@ -182,7 +182,7 @@
 								<div class="button">
 									<div class="left">
 										<em>揭晓进度<i>84%</i></em>
-										<span><i style="width:84% ;"></i></span>
+										<span class="gradient"><i style="width:84% ;"></i></span>
 									</div>
 									<button>加入清单</button>
 								</div>
@@ -197,7 +197,7 @@
 								<div class="button">
 									<div class="left">
 										<em>揭晓进度<i>84%</i></em>
-										<span><i style="width:84% ;"></i></span>
+										<span class="gradient"><i style="width:84% ;"></i></span>
 									</div>
 									<button>加入清单</button>
 								</div>
@@ -212,7 +212,7 @@
 								<div class="button">
 									<div class="left">
 										<em>揭晓进度<i>84%</i></em>
-										<span><i style="width:84% ;"></i></span>
+										<span class="gradient"><i style="width:84% ;"></i></span>
 									</div>
 									<button>加入清单</button>
 								</div>
@@ -227,7 +227,7 @@
 								<div class="button">
 									<div class="left">
 										<em>揭晓进度<i>84%</i></em>
-										<span><i style="width:84% ;"></i></span>
+										<span class="gradient"><i style="width:84% ;"></i></span>
 									</div>
 									<button>加入清单</button>
 								</div>
@@ -250,7 +250,7 @@
 					<div class="button">
 						<div class="left">
 							<em>揭晓进度<i>{{value.percent}}</i></em>
-							<span><i style="width:{{value.percent}};"></i></span>
+							<span class="gradient"><i style="width:{{value.percent}};"></i></span>
 						</div>
 						<button>加入清单</button>
 					</div>
@@ -313,6 +313,7 @@
 						content: '吸尘器除螨仪'
 					}]
 				};
+				/*tab 切换/s*/
 				var $shape_lists = $('.shape_tabs ul.title li');
 				var $shape_tabs_contents = $('.shape_tabs section.contents');
 				var now_index = 0;
@@ -354,8 +355,9 @@
 					position: 'fixed'
 				});
 				my.page('.ing', function() {
-					$('[data-tap=' + now_index + ']').prepend(template('module', data));
+					$('[data-tap=' + now_index + ']').append(template('module', data));
 				})
+				/*tab 切换/e*/
 			})
 		</script>
 	</body>

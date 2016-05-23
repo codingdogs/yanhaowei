@@ -1,0 +1,117 @@
+@import '../public';
+section.contents {
+    ul.content {
+        li {
+            background-color: #fff;
+            a.box {
+                height: 108px;
+                padding: 15px;
+                border-bottom: 1px solid $color_border;
+                div.lazy {
+                    width: 80px;
+                    height: 80px;
+                    margin-right: 20px;
+                    &:last-of-type {
+                        width: 70px;
+                        height: 70px;
+                        margin: 0 0 0 10px;
+                        background-color: transparent;
+                        img {
+                            background-color: transparent;
+                        }
+                    }
+                }
+                div.middle {
+                    font-size: 12px;
+                    color: $color_content;
+                    p {
+                        @include line_over(2);
+                        height: 35px;
+                        font-size: 15px;
+                        color: $color_title;
+                        margin-bottom: 10px;
+                    }
+                    span {
+                        @extend .ellipsis;
+                        margin-bottom: 3px;
+                        display: block;
+                        i {
+                            color: $color_logo;
+                        }
+                    }
+                }
+            }
+            div.bottom {
+                font-size: 12px;
+                box-sizing: content-box;
+                padding: 15px;
+                a {
+                    display: block;
+                    width: 60px;
+                    height: 25px;
+                    text-align: center;
+                    line-height: 25px;
+                    border-radius: 2px;
+                    background-color: $color_logo;
+                    margin-left: 15px;
+                    color: #fff;
+                }
+            }
+            div.bottom1 {
+                section.flex1 {
+                    div {
+                        overflow: hidden;
+                        margin-bottom: 3px;
+                        span {
+                            float: left;
+                            width: 50%;
+                            @extend .ellipsis;
+                            i {
+                                color: #12a2ff;
+                            }
+                            &:nth-of-type(2) {
+                                text-align: right;
+                            }
+                        }
+                    }
+                    span.gradient {
+                        height: 5px;
+                    }
+                }
+            }
+            div.bottom2 {
+                a {
+                    background-color: transparent;
+                    border: 1px solid $color_logo;
+                    color: $color_logo;
+                }
+                section.flex1 {
+                    font-size: 15px;
+                    line-height: 25px;
+                    p {
+                        color: $color_logo;
+                    }
+                    span {
+                        &:nth-of-type(1) {
+                            @extend .ellipsis;
+                            i {
+                                color: #12a2ff;
+                            }
+                        }
+                        &:nth-of-type(2) {
+                            display: block;
+                            padding-left: 3px;
+                            text-align: right;
+                            i {
+                                color: $color_logo;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    li.prize{
+        border:10px solid #ef9391;
+    }
+}

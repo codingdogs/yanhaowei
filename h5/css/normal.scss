@@ -1,3 +1,4 @@
+@import 'notie';
 body,
 h1,
 h2,
@@ -160,7 +161,6 @@ button {
     border-radius: 0;
     -webkit-appearance: none;
     border: 0;
-    border: none;
     background-color: transparent;
 }
 button {
@@ -188,7 +188,7 @@ img.go_opacity {
 }
 @font-face {
     font-family: 'icon';
-    src: url('//at.alicdn.com/t/font_1463558949_2340782.ttf') format('truetype');
+    src: url('//at.alicdn.com/t/font_1463574968_5513897.ttf') format('truetype');
     /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
 }
 .icon {
@@ -603,6 +603,7 @@ section#public_header {
         cursor: pointer;
     }
     a.icon-xiaoxi,
+    a.icon-shezhi,
     a.icon-shopcar {
         left: initial;
         right: 0;
@@ -694,13 +695,18 @@ section.normal {
     a.icon-back {
         display: block!important;
     }
-    section.only{
-        
+}
+section.only {}
+section.nono {
+    h3 {
+        display: none!important;
     }
-    section.nono{
-       a.icon,h3{
-           display: none!important;
-       } 
+    a.icon-shezhi,
+    a.icon-xiaoxi {
+        display: block!important;
+    }
+    a.icon-shezhi {
+        right: 30px!important;
     }
 }
 body {
@@ -878,6 +884,9 @@ section#public_search {
     -webkit-transform: scale(0.8);
     transform: scale(0.8);
 }
+*[data-leftBar] {
+    position: relative;
+}
 *[data-leftBar]:before {
     content: attr(data-leftBar);
     background-color: #9c84cb;
@@ -931,10 +940,22 @@ ul.href_list_bar {
             color: #333;
             font-size: 15px;
             padding: 0 12px;
-            i {
+            i.icon {
                 display: block;
                 margin-right: 12px;
                 font-size: 20px;
+            }
+            i[data-rightbar] {
+                display: inline-block;
+                position: relative;
+                &:after {
+                    top: 4px;
+                    right: -10px;
+                    width: 20px;
+                    height: 20px;
+                    text-align: center;
+                    line-height: 20px;
+                }
             }
             &:after {
                 @extend .icon;
@@ -951,6 +972,14 @@ ul.href_list_bar {
             }
         }
     }
+    li.no_bar {
+        a:after {
+            display: none;
+        }
+    }
+}
+.red {
+    color: #F05454!important;
 }
 .box {
     display: -webkit-box;
@@ -995,8 +1024,80 @@ section.meun_footer {
         color: #f05455;
     }
 }
-body.has_meun{
-    padding-bottom:60px;
+body.has_meun {
+    padding-bottom: 60px;
+}
+section.shape_tabs {
+    overflow: hidden;
+    padding-top: 45px;
+    position: relative;
+    ul.title {
+        position: absolute;
+        background-color: #fff;
+        top: 0;
+        z-index: 3;
+        height: 45px;
+        line-height: 45px;
+        color: #808080;
+        font-size: 14px;
+        z-index: 29;
+        li {
+            text-align: center;
+            position: relative;
+            cursor: pointer;
+            span {
+                display: inline-block;
+            }
+        }
+        li,
+        span {
+            position: relative;
+            height: 100%;
+            @extend .ellipsis;
+        }
+        li.on {
+            color: #f05455;
+        }
+        li.on span:after {
+            content: '';
+            display: block;
+            left: 0;
+            bottom: 0;
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            background-color: #f05455;
+            border-radius: 3px 3px 0 0;
+        }
+    }
+}
+*[data-dai]:after,
+*[data-guo]:after,
+*[data-use]:after {
+    content: attr(data-dai);
+    width: 200px;
+    font-size: 15px;
+    color: #fff;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    position: absolute;
+    right: -100px;
+    padding-top: 23px;
+    padding-bottom: 5px;
+    text-align: center;
+    top: 0;
+    z-index: 3;
+    background-color: #63e5b9;
+    transform-origin: center top;
+    -webkit-transform-origin: center top;
+}
+*[data-guo]:after {
+    content: attr(data-guo);
+    background-color: #fab13b;
+}
+*[data-use]:after {
+    content: attr(data-use);
+    background-color: #f05554;
 }
 //有上脚小圆点/e
 //公共部分样式/e

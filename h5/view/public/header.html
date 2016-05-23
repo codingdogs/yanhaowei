@@ -4,11 +4,12 @@
 <form action="../search/" class="public_form_search">
 	<div class="box">
 		<em class="icon icon-search"></em>
-		<anput type="search" name="search" id="" value="" class="flex1" placeholder="搜索感兴趣的宝贝" autocomplete="off" />
+		<input type="search" name="search" id="" value="" class="flex1" placeholder="搜索感兴趣的宝贝" autocomplete="off" />
 	</div>
 </form>
-<a class="message icon icon-xiaoxi"></a>
-<a class="message icon icon-shopcar" data-rightBar='2'></a>
+<a class="icon icon-xiaoxi"></a>
+<a class="icon icon-shezhi"></a>
+<a class=" icon icon-shopcar" data-rightBar='2'></a>
 <script type="text/javascript">
 	$(function() {
 		$('#public_title span.d_title').html(document.title);
@@ -19,9 +20,9 @@
 		$search.val(my.url_attr('search'));
 		$('form.public_form_search').submit(function(e) {
 			var $search_val = $.trim($search.val());
-			var search_history=store.get('search_history');
+			var search_history = store.get('search_history');
 			if ($search_val == '') {
-				my.toast('请输入搜索内容！');
+				notie.alert(3, '请输入搜索内容', 2);
 				return false;
 			} else {
 				my.show_loading();

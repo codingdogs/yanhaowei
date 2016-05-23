@@ -49,7 +49,7 @@
 				</div>
 				<section class="footer">
 					<button class="btns">注册</button>
-					<a href="index.html" class="btns">登录</a>
+					<a href="login.html" class="btns">登录</a>
 				</section>
 			</form>
 			<section class="login_else">
@@ -94,9 +94,9 @@
 					name: $.trim($user.val())
 				}
 				if (go_json.name == '') {
-					my.toast('账号不能为空！');
+					notie.alert(3, '账号不能为空', 2);
 				} else if (!my.email.test(go_json.name) && !my.tel_test.test(go_json.name)) {
-					my.toast('账号格式不正确!')
+					notie.alert(3, '账号格式不正确', 2);
 				} else {
 					if ($(this).hasClass('on')) {
 						return false;
@@ -131,13 +131,13 @@
 					code: $.trim($code.val())
 				}
 				if (go_json.name == '') {
-					my.toast('账号不能为空！');
+					notie.alert(3, '账号不能为空', 2);
 				} else if (go_json.code == '') {
-					my.toast('验证码不能为空！');
+					notie.alert(3, '验证码不能为空', 2);
 				} else if (go_json.pas == '') {
-					my.toast('密码不能为空！');
+					notie.alert(3, '密码不能为空', 2);
 				} else if (!my.email.test(go_json.name) && !my.tel_test.test(go_json.name)) {
-					my.toast('账号格式不正确!')
+					notie.alert(3, '账号格式不正确', 2);
 				} else {
 					my.show_loading();
 					if (go_json.name == '18688888888') {
