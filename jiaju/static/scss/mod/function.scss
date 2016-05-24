@@ -1,0 +1,22 @@
+$url:"../images/";
+
+//transition
+@mixin tran($a:all, $b:ease, $c:.3s,$d:0s) {
+    transition: $a $b $c $d;
+    -moz-transition: $a $b $c $d;
+    -webkit-transition:$a $b $c $d;
+}
+
+//animate
+@mixin anim($name,$bes,$duration,$delay,$count){//动画名称，曲线，时间，延迟，播放次数
+	animate:$name $bes $duration $delay $count
+}
+
+//transform
+@mixin transform($a) {
+    transform: $a;
+    -moz-transform: $a;
+    -webkit-transform: $a;
+    -ms-transform: $a;
+}
+

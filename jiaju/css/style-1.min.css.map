@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAEA,GAAG,CCAC,UAAU,CAAE,gBAAW,CACvB,eAAe,CAAE,gBAAW,CAC5B,kBAAkB,CAAC,gBAAW",
-"sources": ["../scss/style-1.scss","../scss/mod/function.scss"],
-"names": [],
-"file": "style-1.min.css"
-}
